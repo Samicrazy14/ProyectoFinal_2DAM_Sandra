@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:AppProyectoFinal.Data"
+             x:Name="mainPage"
+             xmlns:local="clr-namespace:AppProyectoFinal.Data"
+             xmlns:lang="clr-namespace:AppProyectoFinal.Resources.Languages"
+             x:Class="AppProyectoFinal.Vistas.ProfileEdit"
+             BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}">
+
+    <ContentPage.Resources>
+        <!-- Estilos Botones -->
+        <Style x:Key="btPrincipal" TargetType="Button">
+            <Setter Property="MinimumWidthRequest" Value="250"/>
+            <Setter Property="MaximumWidthRequest" Value="250"/>
+            <Setter Property="BackgroundColor"  Value="#DF1995"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos Etiquetas -->
+        <Style x:Key="lbTitle" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTitulo}"/>
+            <Setter Property="FontFamily" Value="AfterglowRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <Style x:Key="lbBoldText" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftBold"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <!-- Estilos Entradas -->
+        <Style x:Key="entrada" TargetType="Entry">
+            <Setter Property="PlaceholderColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+            <Setter Property="BackgroundColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos Selector -->
+        <Style x:Key="selector" TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+        
+        <ResourceDictionary>
+            <data:DefaultValueConverter x:Key="DefaultValueConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView  Padding="50" VerticalOptions="Center">
+
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="45">
+
+            <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label Text="{Binding LocalizationResourceManager[txtAjustes2], Mode=OneWay}" Padding="10, 0"
+                       Margin="0,10"
+                       Style="{StaticResource lbTitle}" />
+
+                <!-- Icono de usuario con icono de cámara encima -->
+                <Frame HeightRequest="150"
+                       WidthRequest="150"
+                       HorizontalOptions="Center"
+                       IsClippedToBounds="True"
+                       BackgroundColor="White"
+                       BorderColor="Black"
+                       Padding="0">
+                    <Frame.GestureRecognizers>
+                          <TapGestureRecognizer Command="{Binding PickImageCommand}" />
+                    </Frame.GestureRecognizers>
+                    <AbsoluteLayout>
+                        <!-- Imagen de perfil -->
+                        <Image x:Name="ProfileImage" 
+                                Source="{Binding CurrentUser.ProfileImage}"
+                                MinimumHeightRequest="150"
+                                MinimumWidthRequest="150" 
+                                HorizontalOptions="Center"
+                                BackgroundColor="White"
+                                Aspect="AspectFit"
+                                AbsoluteLayout.LayoutBounds="0.5, 0.5, 150, 150"
+                                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                        <Frame  WidthRequest="30" 
+                                HeightRequest="30"
+                                HorizontalOptions="Center"
+                                IsClippedToBounds="True"
+                                BackgroundColor="Gray"
+                                BorderColor="Black"
+                                AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
+                                AbsoluteLayout.LayoutFlags="PositionProportional"
+                                Padding="0">            
+                            <!-- Ícono de cámara encima de la imagen -->
+                        <Image Source="ic_add_photo_notnight.png" 
+                                WidthRequest="24" 
+                                HeightRequest="24"
+                                BackgroundColor="Gray"/>
+                        </Frame>
+                    </AbsoluteLayout>
+                   
+                </Frame>
+
+                <!-- Campo de entrada para el nombre -->
+                <Frame Padding="10, 0" CornerRadius="5" Margin="0, 20, 0, 0" 
+                       BorderColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"
+                       BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}">
+                    <HorizontalStackLayout>
+                        <Image Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=PersonIcon}" 
+                               WidthRequest="24" HeightRequest="24" VerticalOptions="Center"/>
+                        <Entry x:Name="NameEntry" Placeholder="{Binding CurrentUser.Name}" 
+                               Style="{StaticResource entrada}"
+                               WidthRequest="500"
+                               HorizontalOptions="CenterAndExpand"
+                               Margin="10,0,0,0"/>
+                    </HorizontalStackLayout>
+                </Frame>
+
+
+                <Label Text="{Binding LocalizationResourceManager[txtTema], Mode=OneWay}" Padding="10, 0"
+                       Margin="0,10"
+                       Style="{StaticResource lbBoldText}" />
+                <Picker x:Name="ThemePicker"
+                         Style="{StaticResource selector}"
+                         ItemsSource="{Binding ThemeOptions}"
+                         SelectedIndexChanged="ThemePicker_SelectedIndexChanged">
+                </Picker>
+
+                <Label Text="{Binding LocalizationResourceManager[txtFontsize], Mode=OneWay}" Padding="10, 0"
+                       Margin="0,10"
+                       Style="{StaticResource lbBoldText}" />
+                <Picker x:Name="FontPicker"
+                        Style="{StaticResource selector}"
+                        ItemsSource="{Binding FontSizeOptions}"
+                        SelectedIndexChanged="FontPicker_SelectedIndexChanged">
+                </Picker>
+
+                <Label Text="{Binding LocalizationResourceManager[txtIdioma], Mode=OneWay}" Padding="10, 0" 
+                       Margin="0,10"
+                       Style="{StaticResource lbBoldText}" />
+                <Picker x:Name="LanguagePicker"
+                         Style="{StaticResource selector}"
+                         ItemsSource="{Binding LanguageOptions}"
+                         SelectedIndexChanged="LanguagePicker_SelectedIndexChanged">
+                </Picker>
+
+
+                <Button Text="{Binding LocalizationResourceManager[btActualizar], Mode=OneWay}"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    Margin="0, 20, 0, 0"
+                    HeightRequest="50" 
+                    Style="{StaticResource btPrincipal}"
+                    Clicked="doCambios_Clicked"/>
+            </StackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

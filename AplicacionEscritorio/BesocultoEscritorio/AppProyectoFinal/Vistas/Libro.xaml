@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:AppProyectoFinal.Data"
+             xmlns:local="clr-namespace:AppProyectoFinal.Data"
+             xmlns:lang="clr-namespace:AppProyectoFinal.Resources.Languages"
+             x:Class="AppProyectoFinal.Vistas.Libro"
+             BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"
+             x:Name="mainPage">
+    
+    <ContentPage.Resources>
+        <data:DefaultValueConverter x:Key="DefaultValueConverter"/>
+
+        <!-- Estilos "Botones" -->
+        <Style x:Key="btFramePrincipal" TargetType="Frame">
+            <Setter Property="MinimumWidthRequest" Value="300"/>
+            <Setter Property="MaximumWidthRequest" Value="300"/>
+            <Setter Property="BackgroundColor"  Value="#DF1995"/>
+        </Style>
+
+        <Style x:Key="btFrameComment" TargetType="Frame">
+            <Setter Property="MinimumWidthRequest" Value="300"/>
+            <Setter Property="MaximumWidthRequest" Value="300"/>
+            <Setter Property="BackgroundColor"  Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <!-- Estilos Etiquetas -->
+        <Style x:Key="lbTitle" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTitulo}"/>
+            <Setter Property="FontFamily" Value="AfterglowRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <Style x:Key="lbBoldText" TargetType="Label">
+            <Setter Property="Margin" Value="0,5,5,0"/>
+            <Setter Property="VerticalTextAlignment" Value="Start"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftBold"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <Style x:Key="lbText" TargetType="Label">
+            <Setter Property="Margin" Value="0,5,5,0"/>
+            <Setter Property="VerticalTextAlignment" Value="Start"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <Style x:Key="lbBigBoldText" TargetType="Label">
+            <Setter Property="Margin" Value="0,5,5,0"/>
+            <Setter Property="VerticalTextAlignment" Value="Start"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTitulo}"/>
+            <Setter Property="FontFamily" Value="TommySoftBold"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <Style x:Key="lbBigText" TargetType="Label">
+            <Setter Property="Margin" Value="0,5,5,0"/>
+            <Setter Property="VerticalTextAlignment" Value="Start"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTitulo}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ScrollView  Padding="200,10">
+
+        <VerticalStackLayout x:Name="mainLayout" VerticalOptions="FillAndExpand" Spacing="20" Padding="20">
+            <Grid MinimumHeightRequest="480">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <AbsoluteLayout Grid.Column="0"
+                                Grid.RowSpan="6"
+                                HeightRequest="480"
+                                WidthRequest="360">
+                    <Image x:Name="coverImage" 
+                           Source="default_book_cover.png" 
+                           AbsoluteLayout.LayoutBounds="0, 0, 340, 480"
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           HeightRequest="480" 
+                           WidthRequest="360"/>
+                </AbsoluteLayout>
+
+                <Label Grid.Column="1" Grid.Row="0" Text="{Binding LocalizationResourceManager[txtTitulo], Mode=OneWay}" 
+                        Style="{StaticResource lbBigBoldText}" />
+                <Label  Grid.Column="2" Grid.Row="0" 
+                        x:Name="TitleLabel" 
+                        Text="---" 
+                        Style="{StaticResource lbBigText} "/>
+
+
+                <Label Grid.Column="1" Grid.Row="1" 
+                        Text="{Binding LocalizationResourceManager[txtCategoria], Mode=OneWay}" 
+                        Style="{StaticResource lbBoldText}" />
+                <Label Grid.Column="2" Grid.Row="1"
+                        x:Name="CategoryLabel" 
+                        Text="---"
+                        Style="{StaticResource lbText}" />
+
+
+                <Label Grid.Column="1" Grid.Row="2"
+                       Text="{Binding LocalizationResourceManager[txtFecha], Mode=OneWay}"
+                        Style="{StaticResource lbBoldText}" />
+                <Label Grid.Column="2" Grid.Row="2" 
+                       x:Name="DateLabel" 
+                        Style="{StaticResource lbText}"
+                        Text="---"/>
+
+
+                <Label Grid.Column="1" Grid.Row="3" 
+                       Text="{Binding LocalizationResourceManager[txtVisualizaciones], Mode=OneWay}" 
+                        Style="{StaticResource lbBoldText}" />
+                <Label Grid.Column="2" Grid.Row="3" 
+                       x:Name="ViewsCountLabel"
+                        Style="{StaticResource lbText}"
+                        Text="---" />
+
+
+                <Label Grid.Column="1" Grid.Row="4" 
+                       Text="{Binding LocalizationResourceManager[txtPages], Mode=OneWay}" 
+                        Style="{StaticResource lbBoldText}" />
+                <Label Grid.Column="2" Grid.Row="4" 
+                       x:Name="PagesLabel" 
+                        Style="{StaticResource lbText}"
+                        Text="---" />
+            </Grid>
+
+            <Label x:Name="DescriptionLabel"
+                   Text="---"
+                   Style="{StaticResource lbText}" />
+
+            <FlexLayout JustifyContent="SpaceEvenly" Wrap="Wrap">
+                <Frame VerticalOptions="Center"
+                       Padding="10"
+                       CornerRadius="10"
+                       BorderColor="#DF1995"
+                       Style="{StaticResource btFramePrincipal}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="goLectura_Clicked" />
+                    </Frame.GestureRecognizers>
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <ImageButton x:Name="goLectura" 
+                                     Clicked="goLectura_Clicked" 
+                                     HeightRequest="30" 
+                                     WidthRequest="30" 
+                                     Aspect="AspectFit" 
+                                     BackgroundColor="Transparent" 
+                                     Source="ic_book.png"/>
+                        <Label x:Name="goLecturaLabel" 
+                               Margin="10,0"
+                               TextColor="White"
+                               FontFamily="TommySoftRegular"
+                               FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"
+                               Text="{Binding LocalizationResourceManager[txtLectura], Mode=OneWay}" 
+                               VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Frame x:Name="btFav" 
+                       VerticalOptions="Center"
+                       Padding="10"
+                       CornerRadius="10"
+                       BorderColor="#DF1995"
+                       Style="{StaticResource btFramePrincipal}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="goFav_Clicked" />
+                    </Frame.GestureRecognizers>
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <ImageButton x:Name="goFav" 
+                                     Clicked="goFav_Clicked" 
+                                     HeightRequest="30" 
+                                     WidthRequest="30" 
+                                     Aspect="AspectFit" 
+                                     BackgroundColor="Transparent" 
+                                     Source="ic_favourite_border.png"/>
+                        <Label x:Name="goFavLabel" 
+                               Margin="10,0"
+                               TextColor="White"
+                               FontFamily="TommySoftRegular"
+                               FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"
+                               Text="{Binding LocalizationResourceManager[txtFav], Mode=OneWay}" 
+                               VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </Frame>
+            </FlexLayout>
+            
+            <BoxView HeightRequest="1"
+                     BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"></BoxView>
+            
+            <FlexLayout JustifyContent="SpaceBetween" Wrap="Wrap">
+                <Label Text="{Binding LocalizationResourceManager[txtComentario], Mode=OneWay}" 
+                       Style="{StaticResource lbTitle}"/>
+
+                <Frame x:Name="btComment" 
+                       VerticalOptions="Center"
+                       Padding="10"
+                       CornerRadius="10"
+                       BorderColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"
+                       Style="{StaticResource btFrameComment}">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="goComment_Clicked" />
+                    </Frame.GestureRecognizers>
+                    <HorizontalStackLayout HorizontalOptions="Center">
+                        <ImageButton x:Name="goComment" 
+                                     Clicked="goComment_Clicked" 
+                                     HeightRequest="30" 
+                                     WidthRequest="30" 
+                                     Aspect="AspectFit" 
+                                     BackgroundColor="Transparent"  
+                                     Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=CommentIcon}"/> 
+                        <Label x:Name="goCommentLabel" 
+                               Margin="10,0"
+                               FontFamily="TommySoftRegular"
+                               TextColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"
+                               FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"
+                               Text="{Binding LocalizationResourceManager[txtAddComment], Mode=OneWay}" 
+                               VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </Frame>
+            </FlexLayout>
+
+            <CollectionView x:Name="CommentsCollection" 
+                            Margin="100,0" ItemsSource="{Binding commentList}"
+                            SelectionChanged="OnCommentSelected"
+                            SelectionMode="Single">
+                <CollectionView.Resources>
+                    <!-- Estilos Etiquetas -->
+                    <Style x:Key="lbText" TargetType="Label">
+    	                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+    	                <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+    	                <Setter Property="FontFamily" Value="TommySoftRegular"/>
+    	                <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+                    </Style>
+
+                    <Style x:Key="lbBoldText" TargetType="Label">
+    	                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+    	                <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+    	                <Setter Property="FontFamily" Value="TommySoftBold"/>
+    	                <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+                    </Style>
+                </CollectionView.Resources>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.EmptyView>
+                    <VerticalStackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding LocalizationResourceManager[txtNoComent], Mode=OneWay}"
+                               Style="{StaticResource lbText}"
+                               Margin="20,20"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </VerticalStackLayout>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="15"
+                               BorderColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}" 
+                               BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"
+                               CornerRadius="10"
+                               VerticalOptions="FillAndExpand">
+                            <Grid ColumnSpacing="15" RowDefinitions="Auto, Auto" VerticalOptions="StartAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <!-- Columna de la imagen -->
+                                <Frame Grid.Column="0" HeightRequest="60" WidthRequest="60" 
+                                       Padding="0" IsClippedToBounds="True" BackgroundColor="LightGrey" 
+                                       CornerRadius="60" BorderColor="Transparent">
+                                    <Image Source="{Binding CoverImage, Converter={StaticResource DefaultValueConverter}, ConverterParameter='ic_person_notnight.png'}" 
+                                           Aspect="AspectFill" WidthRequest="60" BackgroundColor="LightGrey"/>
+                                </Frame>
+                                <!-- Columna de información -->
+                                <VerticalStackLayout VerticalOptions="StartAndExpand" Grid.Column="1" Spacing="5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <!-- Nombre y fecha -->
+                                        <Label Grid.Column="0" 
+                                               Text="{Binding Name, Converter={StaticResource DefaultValueConverter}, ConverterParameter='txtNoUser'}"
+                                               Style="{StaticResource lbBoldText}"
+                                               VerticalOptions="Center"/>
+                                        <Label Grid.Column="1" 
+                                               Text="{Binding FormattedDate, Converter={StaticResource DefaultValueConverter}, ConverterParameter='txtNoFecha'}"
+                                               Style="{StaticResource lbText}"
+                                               VerticalOptions="Center" 
+                                               HorizontalOptions="End"/>
+                                    </Grid>
+                                    <!-- Comentario -->
+                                    <Label Text="{Binding comment, Converter={StaticResource DefaultValueConverter}, ConverterParameter=' '}"
+                                           Style="{StaticResource lbText}"
+                                           VerticalOptions="FillAndExpand"
+                                           HorizontalOptions="FillAndExpand"/>
+                                    
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

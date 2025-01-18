@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProyectoFinal.Vistas.BookModal"
+             xmlns:local="clr-namespace:AppProyectoFinal.Data"
+             xmlns:lang="clr-namespace:AppProyectoFinal.Resources.Languages"
+             BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"
+             WidthRequest="700"
+             HeightRequest="200"
+             Padding="20">
+
+    <ContentPage.Resources>
+        <!-- Estilos Botones -->
+        <Style x:Key="btPrincipal" TargetType="Button">
+            <Setter Property="MinimumWidthRequest" Value="250"/>
+            <Setter Property="MaximumWidthRequest" Value="250"/>
+            <Setter Property="BackgroundColor"  Value="#DF1995"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <Style x:Key="btSecundario" TargetType="Button">
+            <Setter Property="MinimumWidthRequest" Value="250"/>
+            <Setter Property="MaximumWidthRequest" Value="250"/>
+            <Setter Property="BackgroundColor"  Value="{DynamicResource SubPrimaryColor}"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos Etiquetas -->
+        <Style x:Key="lbText" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+    </ContentPage.Resources>
+    
+    <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Label x:Name="description" 
+               Style="{StaticResource lbText}"/>
+
+        <HorizontalStackLayout Margin="10" HorizontalOptions="CenterAndExpand">
+
+            <Button Text="{Binding LocalizationResourceManager[txtEditar], Mode=OneWay}"
+                    Style="{StaticResource btPrincipal}"
+                    Clicked="OnEditClicked" />
+            <BoxView WidthRequest="40"
+                     BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"></BoxView>
+            <Button Text="{Binding LocalizationResourceManager[txtBorrar], Mode=OneWay}"
+                    Style="{StaticResource btPrincipal}"
+                    Clicked="OnDeleteClicked" />
+
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Margin="10" HorizontalOptions="CenterAndExpand">
+
+            <Button Text="{Binding LocalizationResourceManager[btCancelar], Mode=OneWay}"
+                Style="{StaticResource btSecundario}"
+                Clicked="OnCancelClicked" />
+
+            <BoxView WidthRequest="40"
+                        BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"></BoxView>
+            <Button x:Name="Upload"
+                    Text="{Binding LocalizationResourceManager[btSubir], Mode=OneWay}"
+                    Style="{StaticResource btPrincipal}"
+                    Clicked="OnUploadClicked" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

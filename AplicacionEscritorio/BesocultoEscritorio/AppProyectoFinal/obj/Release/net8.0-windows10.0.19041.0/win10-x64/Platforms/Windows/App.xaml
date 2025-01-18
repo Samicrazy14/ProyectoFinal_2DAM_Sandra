@@ -1,0 +1,24 @@
+﻿<maui:MauiWinUIApplication
+    x:Class="AppProyectoFinal.WinUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:maui="using:Microsoft.Maui"
+    xmlns:local="using:AppProyectoFinal.WinUI">
+    <maui:MauiWinUIApplication.Resources>
+        <DataTemplate x:Key="MauiAppTitleBarTemplate">
+            <Grid>
+                <Border Canvas.ZIndex="1"  
+                          VerticalAlignment="Stretch"
+                          Background="#DF1995"
+                          Margin="0,0,0,0">
+                    <TextBlock Foreground="white"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Text="Besoculto"  
+                                FontWeight="Bold"/>
+                </Border>
+            </Grid>
+        </DataTemplate>
+    </maui:MauiWinUIApplication.Resources>
+</maui:MauiWinUIApplication>
+

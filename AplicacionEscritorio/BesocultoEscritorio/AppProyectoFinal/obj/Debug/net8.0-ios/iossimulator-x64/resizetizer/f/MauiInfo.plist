@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>UIAppFonts</key>
+  <array>
+	<string>Afterglow-Regular.otf</string>
+	<string>Afterglow-Regular.ttf</string>
+	<string>MauiInfo.plist</string>
+	<string>OpenSans-Regular.ttf</string>
+	<string>OpenSans-Semibold.ttf</string>
+	<string>TommySoft_Black.otf</string>
+	<string>TommySoft_Bold.otf</string>
+	<string>TommySoft_ExtraBold.otf</string>
+	<string>TommySoft_Light.otf</string>
+	<string>TommySoft_Medium.otf</string>
+	<string>TommySoft_Regular.otf</string>
+	<string>TommySoft_Thin.otf</string>
+  </array>
+
+</dict>
+</plist>

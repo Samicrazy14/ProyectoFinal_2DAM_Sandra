@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProyectoFinal.MainPage"
+             x:Name="mainPage"
+             xmlns:local="clr-namespace:AppProyectoFinal.Data"
+             xmlns:lang="clr-namespace:AppProyectoFinal.Resources.Languages"
+             BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}">
+
+    <ContentPage.Resources>
+        <!-- Estilos Botones -->
+        <Style x:Key="btPrincipal" TargetType="Button">
+            <Setter Property="MinimumWidthRequest" Value="250"/>
+            <Setter Property="MaximumWidthRequest" Value="250"/>
+            <Setter Property="BackgroundColor"  Value="#DF1995"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <Style x:Key="btSecundario" TargetType="Button">
+            <Setter Property="MinimumWidthRequest" Value="250"/>
+            <Setter Property="MaximumWidthRequest" Value="250"/>
+            <Setter Property="BackgroundColor"  Value="{DynamicResource SubPrimaryColor}"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos Etiquetas -->
+        <Style x:Key="lbTitle" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTitulo}"/>
+            <Setter Property="FontFamily" Value="AfterglowRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ScrollView Padding="50" VerticalOptions="Center">
+
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="45">
+
+            <Image Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=MarcaIcon}"
+                   HeightRequest="100"/>
+
+            <Label Text="{Binding LocalizationResourceManager[txtBienvenida], Mode=OneWay}" 
+                   Style="{StaticResource lbTitle}"/>
+
+            <HorizontalStackLayout Spacing="50" Margin="0, 200, 0, 0"  HorizontalOptions="Center">
+
+                <Button x:Name="goInicio" 
+                        Text="{Binding LocalizationResourceManager[btNoLogin], Mode=OneWay}" 
+                        Clicked="goInicio_Clicked" 
+                        Style="{StaticResource btSecundario}"/>
+                
+                <Button x:Name="goLogin" 
+                        Text="{Binding LocalizationResourceManager[btLogin], Mode=OneWay}" 
+                        Clicked="goLogin_Clicked" 
+                        Style="{StaticResource btPrincipal}"/>
+                
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

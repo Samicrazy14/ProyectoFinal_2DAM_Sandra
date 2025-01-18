@@ -1,0 +1,191 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AppProyectoFinal
+build_property.ProjectDir = C:\Users\sandr\Desktop\PF\AplicacionEscritorio\AppProyectoFinal\AppProyectoFinal\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Resources/Fuentes/FuenteGrande.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Resources.Fuentes.FuenteGrande.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Fuentes\FuenteGrande.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Fuentes\FuenteGrande.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Resources/Fuentes/FuenteMediana.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Resources.Fuentes.FuenteMediana.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Fuentes\FuenteMediana.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Fuentes\FuenteMediana.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Resources/Fuentes/FuentePequena.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Resources.Fuentes.FuentePequena.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Fuentes\FuentePequena.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Fuentes\FuentePequena.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Resources/Temas/TemaClaro.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Resources.Temas.TemaClaro.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Temas\TemaClaro.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Temas\TemaClaro.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Resources/Temas/TemaOscuro.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Resources.Temas.TemaOscuro.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Temas\TemaOscuro.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Temas\TemaOscuro.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/Ayuda.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.Ayuda.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\Ayuda.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\Ayuda.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/BookModal.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.BookModal.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\BookModal.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\BookModal.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/DashBoardBooks.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.DashBoardBooks.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\DashBoardBooks.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\DashBoardBooks.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/DashBoardCategories.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.DashBoardCategories.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\DashBoardCategories.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\DashBoardCategories.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/DashBoardNewBooks.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.DashBoardNewBooks.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\DashBoardNewBooks.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\DashBoardNewBooks.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/DashBoardPublicBooks.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.DashBoardPublicBooks.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\DashBoardPublicBooks.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\DashBoardPublicBooks.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/DashBoardUsers.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.DashBoardUsers.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\DashBoardUsers.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\DashBoardUsers.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/DashBoardViewedBooks.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.DashBoardViewedBooks.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\DashBoardViewedBooks.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\DashBoardViewedBooks.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/EditPdfData.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.EditPdfData.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\EditPdfData.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\EditPdfData.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/ForgotPassword.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.ForgotPassword.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\ForgotPassword.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\ForgotPassword.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/Lectura.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.Lectura.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\Lectura.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\Lectura.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/Libro.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.Libro.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\Libro.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\Libro.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/Login.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.Login.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\Login.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\Login.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\MainPage.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/Profile.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.Profile.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\Profile.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\Profile.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/ProfileEdit.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.ProfileEdit.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\ProfileEdit.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\ProfileEdit.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/Register.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.Register.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\Register.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\Register.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Vistas/UserModal.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Vistas.UserModal.xaml
+build_metadata.AdditionalFiles.TargetPath = Vistas\UserModal.xaml
+build_metadata.AdditionalFiles.RelativePath = Vistas\UserModal.xaml
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Resources/Raw/web/debugger.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Resources.Raw.web.debugger.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\web\debugger.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\web\debugger.css
+
+[C:/Users/sandr/Desktop/PF/AplicacionEscritorio/AppProyectoFinal/AppProyectoFinal/Resources/Raw/web/viewer.css]
+build_metadata.AdditionalFiles.GenKind = Css
+build_metadata.AdditionalFiles.ManifestResourceName = AppProyectoFinal.Resources.Raw.web.viewer.css
+build_metadata.AdditionalFiles.TargetPath = Resources\Raw\web\viewer.css
+build_metadata.AdditionalFiles.RelativePath = Resources\Raw\web\viewer.css

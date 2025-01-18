@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProyectoFinal.Vistas.Register"
+             xmlns:local="clr-namespace:AppProyectoFinal.Data"
+             xmlns:lang="clr-namespace:AppProyectoFinal.Resources.Languages"
+             x:Name="mainPage" 
+             BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}">
+
+    <ContentPage.Resources>
+
+        <!-- Estilos Botones -->
+        <Style x:Key="btPrincipal" TargetType="Button">
+            <Setter Property="MinimumWidthRequest" Value="250"/>
+            <Setter Property="MaximumWidthRequest" Value="250"/>
+            <Setter Property="BackgroundColor"  Value="#DF1995"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos Etiquetas -->
+        <Style x:Key="lbTitle" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTitulo}"/>
+            <Setter Property="FontFamily" Value="AfterglowRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <!-- Estilos Entradas -->
+        <Style x:Key="entrada" TargetType="Entry">
+            <Setter Property="PlaceholderColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+            <Setter Property="BackgroundColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ScrollView Padding="50" VerticalOptions="Center">
+
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="45">
+
+            <Image Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=MarcaIcon}"
+                   HeightRequest="100"/>
+
+            <Label Text="{Binding LocalizationResourceManager[txtRegistro], Mode=OneWay}" 
+                   Style="{StaticResource lbTitle}"/>
+            <Entry x:Name="nameEntry" 
+                   Placeholder="{Binding LocalizationResourceManager[txtNombreUsuario], Mode=OneWay}" 
+                   Style="{StaticResource entrada}"/>
+            <Entry x:Name="emailEntry"
+                   Placeholder="{Binding LocalizationResourceManager[phEmail], Mode=OneWay}"
+                   Style="{StaticResource entrada}"/>
+            <Grid>
+                <Entry x:Name="passwordEntry" 
+                        Placeholder="{Binding LocalizationResourceManager[phPassword], Mode=OneWay}" 
+                        IsPassword="{Binding IsPasswordVisible}" 
+                        Style="{StaticResource entrada}"
+                        Grid.Column="0" />
+
+                <ImageButton Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=CloseEyeIcon}"
+                              MaximumHeightRequest="16"
+                              MaximumWidthRequest="16"
+                              BackgroundColor="Transparent"
+                              Clicked="OnEyeButtonClicked"
+                              Margin="0, 0, 10, 0"
+                              Grid.Column="1"
+                              HorizontalOptions="End"
+                              VerticalOptions="Center" />
+            </Grid>
+
+            <Grid>
+                <Entry x:Name="cPasswordEntry"
+                         Placeholder="{Binding LocalizationResourceManager[phRepCon], Mode=OneWay}" 
+                         IsPassword="{Binding IsPasswordVisible2}" 
+                         Style="{StaticResource entrada}"
+                         Grid.Column="0" />
+
+                <ImageButton Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=CloseEyeIcon}"
+                               MaximumHeightRequest="16"
+                               MaximumWidthRequest="16"
+                               BackgroundColor="Transparent"
+                               Clicked="OnEyeButtonClicked2"
+                               Margin="0, 0, 10, 0"
+                               Grid.Column="1"
+                               HorizontalOptions="End"
+                               VerticalOptions="Center" />
+            </Grid>
+            <Button x:Name="doRegistro" 
+                    Text="{Binding LocalizationResourceManager[btRegistrarse], Mode=OneWay}" 
+                    Clicked="doRegistro_Clicked" Style="{StaticResource btPrincipal}"/>
+            
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

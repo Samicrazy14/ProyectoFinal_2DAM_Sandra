@@ -1,0 +1,3314 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AppProyectoFinal</name>
+    </assembly>
+    <members>
+        <member name="T:AppProyectoFinal.Data.DefaultValueConverter">
+            <summary>
+            Convertidor de valores para proporcionar un valor predeterminado cuando el valor de entrada es nulo o vacío.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.DefaultValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Método para convertir un valor, devolviendo un parámetro específico si el valor es nulo o vacío.
+            <list type="number">
+            <param name="value">Valor de entrada a convertir, puede ser nulo o vacío.</param>
+            <param name="targetType">Tipo de destino al que se desea convertir el valor.</param>
+            <param name="parameter">Valor predeterminado a devolver si el valor de entrada es nulo o vacío.</param>
+            <param name="culture">Información cultural que se debe utilizar en la conversión.</param>
+            </list>
+            </summary>
+            <returns>Devuelve el valor de entrada si no es nulo o vacío; de lo contrario, devuelve el parámetro predeterminado.</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.#ctor">
+            <summary>
+            Clase para manejar las conexiones con Firebase Database
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.UpdateItemAsync(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Método para subir datos a una colección(GutembergBooks, Users, ...)
+            <list type="number">
+            <item><param name="collection">Nombre de la colección</param></item>
+            <item><param name="itemId">Identificador de los datos</param></item>
+            <item><param name="itemData">Objeto con los datos a subir</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.GetItemByIdAsync``1(System.String,System.String)">
+            <summary>
+            Método para recoger un elemento de una colección(Books, GutembergBooks, Users, Categories, ...) específica por su ID
+            <list type="number">
+            <item><param name="collection">Nombre de la colección </param></item>
+            <item><param name="itemId">Identificador de los datos</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve objeto del tipo requerido</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.GetAllCollectionAsync``1(System.String)">
+            <summary>
+            Método para recoger una lista de la colección
+            <list type="number">
+            <item><param name="collection">Nombre de la colección </param></item>
+            </list>
+            </summary>
+            <returns>Devuelve una lista de objetos de la colección </returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.GetMostViewedBooksAsync(System.Int32)">
+            <summary>
+            Método para recoger una lista de libros ordenados por "viewsCount"
+            <list type="number">
+            <item><param name="limit">Limite de libros, por defecto 10</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve una lista de objetos ModelPdf</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.GetFavoriteBookAsync(System.String,System.String)">
+            <summary>
+            Método para recoger la información de un libro favorito de un usuario
+            <list type="number">
+            <item><param name="bookId">Identificador del libro</param></item>
+            <item><param name="uid">Identificador del usuario</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve un objeto ModelFav</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.GetFavoritesBooksAsync(System.String)">
+            <summary>
+            Método para recoger una lista de libros favoritos de un usuario
+            <list type="number">
+            <item><param name="uid">Identificador del usuario</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve una lista de objetos ModelFav</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.UpdateViewsCountAsync(System.String,System.String,System.Int64)">
+            <summary>
+            Método para actualizar el valor del contador de vistas de un libro
+            <list type="number">
+            <item><param name="collection">Identificador de la colección</param></item>
+            <item><param name="bookId">Identificador del libro</param></item>
+            <item><param name="viewsCount">Nuevo valor actualizado</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.UpdateUserTypeAsync(System.String,System.String,System.String)">
+            <summary>
+            Método para actualizar el valor del tipo de usuario de un usuario
+            <list type="number">
+            <item><param name="collection">Identificador de la colección</param></item>
+            <item><param name="uid">Identificador del usuario</param></item>
+            <item><param name="userType">Nuevo valor actualizado</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.UpdateUserNameAsync(System.String,System.String,System.String)">
+            <summary>
+            Método para actualizar el valor del nombre del usuario
+            <list type="number">
+            <item><param name="collection">Identificador de la colección</param></item>
+            <item><param name="uid">Identificador del usuario</param></item>
+            <item><param name="name">Nuevo valor actualizado</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.UpdateUserImageAsync(System.String,System.String,System.String)">
+            <summary>
+            Método para actualizar el valor del nombre del usuario
+            <list type="number">
+            <item><param name="collection">Identificador de la colección</param></item>
+            <item><param name="uid">Identificador del usuario</param></item>
+            <item><param name="profileImage">Nuevo valor actualizado</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.UpdateBookDataAsync(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Método para actualizar los valores editables de un libro
+            <list type="number">
+            <item><param name="collection">Identificador de la colección</param></item>
+            <item><param name="id">Identificador del libro</param></item>
+            <item><param name="title">Nuevo valor para titulo</param></item>
+            <item><param name="description">Nuevo valor para descripción</param></item>
+            <item><param name="categoryId">Nuevo valor para el id de categoría</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.GetCommentsAsync(System.String,System.String)">
+            <summary>
+            Método para recoger una lista de comentarios de un libro
+            <list type="number">
+            <item><param name="collection">Identificador de la colección</param></item>
+            <item><param name="bookId">Identificador del libro</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve una lista de objetos ModelComment</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.AddCommentAsync(System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Método para añadir un comentario
+            <list type="number">
+            <item><param name="collection">Identificador de la colección</param></item>
+            <item><param name="bookId">Identificador del libro</param></item>
+            <item><param name="timestamp">Id del comentario/fecha de creación</param></item>
+            <item><param name="commentData">Datos del comentario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.AddFavoriteAsync(System.String,AppProyectoFinal.Data.ModelFav,System.String)">
+            <summary>
+            Método para añadir un favorito
+            <list type="number">
+            <item><param name="bookId">Identificador del libro</param></item>
+            <item><param name="favData">Datos del favorito</param></item>
+            <item><param name="uid">Identificador del usuario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.DeleteUserActionAsync(System.String,System.String,System.String,System.String)">
+            <summary>
+            Método para eliminar un favorito o un comentario
+            <list type="number">
+            <item><param name="collection">Identificador del tipo de libro o usuario</param></item>
+            <item><param name="itemId">Identificador del libro o usuario</param></item>
+            <item><param name="subCollection">Identificador de si es comentario o favorito</param></item>
+            <item><param name="subItemId">Identificador del comentario o libro fav</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.DeleteItemAsync(System.String,System.String)">
+            <summary>
+            Método para eliminar un item de la BBDD
+            <list type="number">
+            <item><param name="collection">Identificador de la coleccion</param></item>
+            <item><param name="itemId">Identificador del item</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.GetConfigUserAsync(System.String)">
+            <summary>
+            Método para recoger la configuracion de un usuario
+            <list type="number">
+            <item><param name="uid">Identificador del usuario</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve una lista de objetos ModelFav</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseDatabaseManager.UpdateConfigUserAsync(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Método para actualizar la configuracion de un usuario
+            <list type="number">
+            <item><param name="uid">Identificador del usuario</param></item>
+            <item><param name="configData">Parametros de la configuracion</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseStorageManager.#ctor">
+            <summary>
+            Clase para manejar las conexiones con Firebase Storage
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseStorageManager.GetItemDownloadUrlAsync(System.String,System.String)">
+            <summary>
+            Método para obtener la URL de descarga de un archivo
+            <list type="number">
+            <item><param name="collection">Collecion a la que pertenece</param></item>
+            <item><param name="id">Identificador del libro o usuario</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve un string con la url</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseStorageManager.GetBookMetaDataAsync(System.String)">
+            <summary>
+            Método para obtener los metadatos de un archivo en "Books"
+            <list type="number">
+            <item><param name="bookId">Identificador del libro</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve un objeto de la clase FirebaseMetaData con los metadatos</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseStorageManager.PushItemAsync(System.String,System.String,System.IO.Stream)">
+            <summary>
+            Método para subir archivos a Storage
+            <list type="number">
+            <item><param name="collection">coleccion a la que se va a subir</param></item>
+            <item><param name="uid">Identificador del archivo</param></item>
+            <item><param name="stream">Contiene la imagen</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FirebaseStorageManager.DeleteItemAsync(System.String,System.String)">
+            <summary>
+            Método para eliminar archivos de Storage
+            <list type="number">
+            <item><param name="collection">coleccion a la que se va a subir</param></item>
+            <item><param name="uid">Identificador del archivo</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Data.FontSizeManager">
+            <summary>
+            Manejador del tamaño de fuente que permite cambiar entre los valores definidos.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.FontSizeManager.UpdateFontSizes(System.Int32)">
+            <summary>
+            Método para cambiar el tamaño de fuente entre las 3 opciones posibles.
+            <list type="number">
+            <param name="selectedSize">Opción a la que se desea convertir (0: Pequeña, 1: Mediana, 2: Grande).</param>
+            </list>
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Data.InverseBoolConverter">
+            <summary>
+            Convertidor de valores booleanos para invertir el valor original.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.InverseBoolConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Método para convertir un valor booleano a su inverso.
+            <list type="number">
+            <param name="value">Valor booleano de entrada que se va a invertir.</param>
+            <param name="targetType">Tipo de destino al que se desea convertir el valor.</param>
+            <param name="parameter">Parámetro opcional para la conversión.</param>
+            <param name="culture">Información cultural que se debe utilizar en la conversión.</param>
+            </list>
+            </summary>
+            <returns>Devuelve el valor booleano invertido, o el valor original si no es booleano.</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.LogManager.#ctor">
+            <summary>
+            Clase para manejar los datos de log del Usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.LogManager.SaveUserCredentialsAsync(System.String,System.String)">
+            <summary>
+            Método para almacenar en la app el usuario y entrar a la cuenta directamente la proxima vez
+            <list type="number">
+            <item><param name="email">Email del usuario</param></item>
+            <item><param name="password">Password del usuario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.LogManager.ReadUserCredentialsAsync">
+            <summary>
+            Método para leer los credenciales guardados del usuario si existen
+            </summary>
+            <returns>Devuelve la email y contraseña para logearse</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.LogManager.DeleteUserCredentials">
+            <summary>
+            Método para eliminar el archivo de credenciales del usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.LogManager.Encrypt(System.String)">
+            <summary>
+            Método para encriptar los credenciales
+            <list type="number">
+            <item><param name="plainText">Texto a encriptar</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve los credenciales encriptados</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.LogManager.Decrypt(System.String)">
+            <summary>
+            Método para desencriptar los credenciales
+            <list type="number">
+            <item><param name="cipherText">Texto a desencriptar</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve los credenciales desencriptados</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Data.MessageManager.#ctor(Microsoft.Maui.Controls.Page,Microsoft.Maui.Controls.ScrollView)">
+            <summary>
+            Clase para gestionar la visualización de mensajes e indicadores de carga
+            <list type="number">
+            <item><param name="page">Página en la que se mostrará</param></item>
+            <item><param name="scrollView">Parámetro opcional para especificar el scrollView</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.MessageManager.ShowMessage(System.String,System.Int32)">
+            <summary>
+            Muestra un mensaje temporal en la pantalla por un período de tiempo especificado.
+            <list type="number">
+            <item><param name="message">Texto del mensaje a mostrar</param></item>
+            <item><param name="duration">Duración en milisegundos del mensaje en pantalla (por defecto, 2000 ms)</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.MessageManager.ShowLoading(System.String)">
+            <summary>
+            Muestra el indicador de carga en pantalla junto con un mensaje.
+            <list type="number">
+            <item><param name="message">Texto del mensaje a mostrar</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.MessageManager.HideLoading">
+            <summary>
+            Oculta el indicador de carga en pantalla.
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Data.ModelCategory">
+            <summary>
+            Clase para manejar los datos de las categorías
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelCategory.#ctor(System.String,System.String,System.Int64,System.String)">
+            <summary>
+            Constructor de Categoría con datos
+            <list type="number">
+            <item><param name="id">Identificador de la categoría</param></item>
+            <item><param name="category">Nombre de la categoría</param></item>
+            <item><param name="timestamp">Fecha de creación de la categoría</param></item>
+            <item><param name="uid">Identificador del usuario que creó la categoría</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Data.ModelComment">
+            <summary>
+            Clase para manejar los datos de los comentarios
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelComment.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor de Comentario con datos
+            <list type="number">
+            <item><param name="id">Identificador del comentario</param></item>
+            <item><param name="bookId">Identificador del libro del comentario</param></item>
+            <item><param name="timestamp">Fecha de creación del comentario</param></item>
+            <item><param name="comment">Contenido del comentario</param></item>
+            <item><param name="uid">Identificador del usuario que hizo el comentario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelComment.FormatTimestamp(System.String)">
+            <summary>
+            Método para formatear la fecha de creación
+            </summary>
+            <list type="number">
+            <item><param name="timestampString">Fecha de creación del comentario</param></item>
+            </list>
+            <returns>Devuelve la fecha formateada</returns>
+        </member>
+        <member name="T:AppProyectoFinal.Data.ModelConfig">
+            <summary>
+            Clase para manejar los datos de configuracion del usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelConfig.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor de Configuracion con datos
+            <list type="number">
+            <item><param name="fontSize">Tamaño de fuente</param></item>
+            <item><param name="language">Lenguaje</param></item>
+            <item><param name="theme">Tema</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Data.ModelFav">
+            <summary>
+            Clase para manejar los datos de los favoritos
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelFav.#ctor(System.String,System.Int64,System.String)">
+            <summary>
+            Constructor de Categoría con datos
+            <list type="number">
+            <item><param name="bookId">Identificador del favorito</param></item>
+            <item><param name="timestamp">Fecha de creación delfavorito</param></item>
+            <item><param name="type">Tipo del libro favorito</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Data.ModelPdf">
+            <summary>
+            Clase para manejar los datos de los libros
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelPdf.#ctor(System.String,System.String,System.String,System.String,System.String,System.Int64,System.String,System.Int64,System.Int64)">
+            <summary>
+            Constructor de libros de Firebase con datos
+            <list type="number">
+            <item><param name="uid">Identificador del autor del libro</param></item>
+            <item><param name="id">Identificador del libro</param></item>
+            <item><param name="title">Titulo del libro</param></item>
+            <item><param name="description">Descripción del libro</param></item>
+            <item><param name="categoryId">Identificador de la categoría del libro</param></item>
+            <item><param name="pageCount">Numero de páginas del libro</param></item>
+            <item><param name="url">Url del contenido del libro</param></item>
+            <item><param name="timestamp">Fecha de creación del libro</param></item>
+            <item><param name="viewsCount">Numero de visualizaciones del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelPdf.#ctor(System.String,System.String,System.String,System.String,System.String,System.Int64,System.Int64,System.String,System.String,System.String,System.Int64)">
+            <summary>
+            Constructor de libros de Gutenberg API con datos
+            <list type="number">
+            <item><param name="author">Autor del libro</param></item>
+            <item><param name="categoryId">Identificador de la categoría del libro</param></item>
+            <item><param name="description">Descripción del libro</param></item>
+            <item><param name="id">Identificador del libro</param></item>
+            <item><param name="imagenUrl">Url de la portada del libro</param></item>
+            <item><param name="pageCount">Numero de páginas del libro</param></item>
+            <item><param name="timestamp">Fecha de creación del libro</param></item>
+            <item><param name="title">Titulo del libro</param></item>
+            <item><param name="uid">Identificador del autor del libro</param></item>
+            <item><param name="url">Url del contenido del libro</param></item>
+            <item><param name="viewsCount">Numero de visualizaciones del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelPdf.FormatTimestamp(System.Int64)">
+            <summary>
+            Método para formatear la fecha de creación
+            </summary>
+            <list type="number">
+            <item><param name="timestamp">Fecha de creación del comentario</param></item>
+            </list>
+            <returns>Devuelve la fecha formateada</returns>
+        </member>
+        <member name="T:AppProyectoFinal.Data.ModelUser">
+            <summary>
+            Clase para manejar los datos de usuarios
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelUser.#ctor(System.String,System.String,System.String,System.String,System.Int64,System.String)">
+            <summary>
+            Constructor de Usuario con datos
+            <list type="number">
+            <item><param name="uid">Identificador del usuario</param></item>
+            <item><param name="email">Correo del usuario</param></item>
+            <item><param name="name">Nombre del usuario</param></item>
+            <item><param name="profileImage">Url de firestore con la imagen del usuario</param></item>
+            <item><param name="timestamp">Fecha de creación del usuario</param></item>
+            <item><param name="userType">Rol del usuario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ModelUser.FormatTimestamp(System.Int64)">
+            <summary>
+            Método para formatear la fecha de creación
+            </summary>
+            <list type="number">
+            <item><param name="timestamp">Fecha de creación del usuario</param></item>
+            </list>
+            <returns>Devuelve la fecha formateada</returns>
+        </member>
+        <member name="T:AppProyectoFinal.Data.ThemeManager">
+            <summary>
+            Manejador del tema que permite cambiar entre los colores de items de un tema a otro.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Data.ThemeManager.UpdateThemeColors(System.Int32)">
+            <summary>
+            Método para cambiar el tema entre las 2 opciones posibles.
+            <list type="number">
+            <param name="selectedTheme">Opción a la que se desea convertir (0: Claro, 1: Oscuro).</param>
+            </list>
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.LocalizationResourceManager">
+            <summary>
+            Clase para la gestión de los recursos de idiomas.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.LocalizationResourceManager.#ctor">
+            <summary>
+            Constructor para la gestión de los recursos de idiomas.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.LocalizationResourceManager.Instance">
+            <summary>
+            Obtiene o establece la instacia del idioma actual.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.LocalizationResourceManager.Item(System.String)">
+            <summary>
+            Variable para obtener el idioma actual de la aplicación.
+            </summary>
+        </member>
+        <member name="E:AppProyectoFinal.LocalizationResourceManager.PropertyChanged">
+            <summary>
+            Variable para detectar cambios en el idioma de la aplicación.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.LocalizationResourceManager.SetCulture(System.Globalization.CultureInfo)">
+            <summary>
+            Método para cambiar el idioma de la aplicación.
+            <list type="number">
+            <item><param name="culture">Objeto del tipo <em>CultureInfo</em> con el nuevo idioma de la aplicación.</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.WinUI.App">
+            <summary>
+            Provides application-specific behavior to supplement the default Application class.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.WinUI.App.#ctor">
+            <summary>
+            Initializes the singleton application object.  This is the first line of authored code
+            executed, and as such is the logical equivalent of main() or WinMain().
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.WinUI.App.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.WinUI.App.GetXamlType(System.Type)">
+            <summary>
+            GetXamlType(Type)
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.WinUI.App.GetXamlType(System.String)">
+            <summary>
+            GetXamlType(String)
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.WinUI.App.GetXmlnsDefinitions">
+            <summary>
+            GetXmlnsDefinitions()
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.WinUI.Program">
+            <summary>
+            Program class
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Resources.Fuentes.FuenteGrande">
+            <summary>
+            Clase con la configuración del tamaño de Fuente grande de la APP.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Resources.Fuentes.FuenteGrande.#ctor">
+            <summary>
+            Constructor con la configuración del tamaño de Fuente grande de la APP.
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Resources.Fuentes.FuenteMediana">
+            <summary>
+            Clase con la configuración del tamaño de Fuente mediana de la APP.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Resources.Fuentes.FuenteMediana.#ctor">
+            <summary>
+            Constructor con la configuración del tamaño de Fuente mediana de la APP.
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Resources.Fuentes.FuentePequena">
+            <summary>
+            Clase con la configuración del tamaño de Fuente pequeña de la APP.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Resources.Fuentes.FuentePequena.#ctor">
+            <summary>
+            Constructor con la configuración del tamaño de Fuente pequeña de la APP.
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.Resources.Languages.AppResources">
+            <summary>
+              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.ResourceManager">
+            <summary>
+              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.Culture">
+            <summary>
+              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btAcercar">
+            <summary>
+              Busca una cadena traducida similar a Acercar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btActualizar">
+            <summary>
+              Busca una cadena traducida similar a Actualizar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btAddFav">
+            <summary>
+              Busca una cadena traducida similar a Añadir favorito.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btAddNewBook">
+            <summary>
+              Busca una cadena traducida similar a Añadir nuevo libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btAlejar">
+            <summary>
+              Busca una cadena traducida similar a Alejar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btCancelar">
+            <summary>
+              Busca una cadena traducida similar a Cancelar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btEnviar">
+            <summary>
+              Busca una cadena traducida similar a Enviar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btLeer">
+            <summary>
+              Busca una cadena traducida similar a Leer.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btLogin">
+            <summary>
+              Busca una cadena traducida similar a Iniciar sesión.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btNoLogin">
+            <summary>
+              Busca una cadena traducida similar a Continuar sin iniciar sesión.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btOlvidaCon">
+            <summary>
+              Busca una cadena traducida similar a ¿Olvidaste tu contraseña?.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btRecCon">
+            <summary>
+              Busca una cadena traducida similar a Recuperar Contraseña.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btRegistrarse">
+            <summary>
+              Busca una cadena traducida similar a Registrarme.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.btSubir">
+            <summary>
+              Busca una cadena traducida similar a Subir.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.busqueda">
+            <summary>
+              Busca una cadena traducida similar a Buscar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.expActionBook">
+            <summary>
+              Busca una cadena traducida similar a ¿Qué acción quiere realizar sobre el libro: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.expChangeRol">
+            <summary>
+              Busca una cadena traducida similar a ¿Quiere dar el rango de autor al usuario?.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.expChangeRol2">
+            <summary>
+              Busca una cadena traducida similar a ¿Quiere dar el rango de autor al usuario: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.expOlvidaCon">
+            <summary>
+              Busca una cadena traducida similar a Introduce tu correo registrado para recibir instrucciones para resetear tu contraseña.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.expVerificar">
+            <summary>
+              Busca una cadena traducida similar a ¿Estás seguro de que quieres enviar las instrucciones de verificación a tu correo?.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help1">
+            <summary>
+              Busca una cadena traducida similar a Página de Inicio.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help10">
+            <summary>
+              Busca una cadena traducida similar a Su contenido varía dependiendo de si el usuario esta logado o no:.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help11">
+            <summary>
+              Busca una cadena traducida similar a Para usuarios no logados, la pantalla principal muestra una lista de obras públicas y la opción de cargar un archivo propio a través de un botón en la parte inferior..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help12">
+            <summary>
+              Busca una cadena traducida similar a Para usuarios logados acceden a una vista personalizada donde se presentan libros clasificados en diferentes categorías (Novedades, Más vistos y Obras públicas). En la cabecera superior se muestra información de la cuenta, con un ícono de perfil para acceder a los ajustes y otro para cerrar sesión. Además, se incluye un enlace adicional a esta página de ayuda en la cabecera. Los usuarios pueden acceder a una colección de obras de dominio público en formato EPUB. Cuenta con una barra de navegación y botones  [resto de la cadena truncado]&quot;;.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help13">
+            <summary>
+              Busca una cadena traducida similar a Página Principal: Novedades.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help14">
+            <summary>
+              Busca una cadena traducida similar a Se listan los últimos libros publicados por la comunidad los cuales se pueden visualizar sus detalles al pulsar sobre ellos. Cuenta con la misma navgación y funcionalidades comentadas en Obras públicas..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help15">
+            <summary>
+              Busca una cadena traducida similar a Página Principal: Más vistos.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help16">
+            <summary>
+              Busca una cadena traducida similar a Se listan los libros más populares de la comunidad los cuales se pueden visualizar sus detalles al pulsar sobre ellos. Cuenta con la misma navgación y funcionalidades comentadas en Obras públicas..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help17">
+            <summary>
+              Busca una cadena traducida similar a Página de Subida de libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help18">
+            <summary>
+              Busca una cadena traducida similar a Nueva pantalla accesible desde el botón de la página principal de subir libro, contiene un formulario para completar la información asociada al libro que se desea subir. Este formulario incluye campos como el título, una descripción y la categoría a la que pertenece. Además, se muestra un botón con forma de clip que permite seleccionar el archivo PDF desde el dispositivo del usuario. Una vez que el formulario esté completo, al pulsar el botón de subir, el libro será almacenado y quedará pendiente de revisió [resto de la cadena truncado]&quot;;.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help19">
+            <summary>
+              Busca una cadena traducida similar a Página de Detalles de libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help2">
+             <summary>
+               Busca una cadena traducida similar a Al abrir la aplicación, se muestra una pantalla inicial desde la cual puedes iniciar sesión para acceder al contenido completo o continuar sin iniciar sesión, lo que limitará el acceso a ciertos contenidos. Si ya has iniciado sesión previamente, la aplicación recuerda esta sesión, omitiendo la pantalla inicial.
+            .
+             </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help20">
+            <summary>
+              Busca una cadena traducida similar a Si se selecciona un libro de cualquier listado, se redirige a la pantalla de detalles del libro. En esta sección se presenta información relevante sobre el libro, como el título, descripción, categoría, fecha de creación, número de visualizaciones y una lista de comentarios realizados por otros usuarios. Desde esta página, los usuarios pueden interactuar de diferentes maneras: añadir un comentario pulsando el botón negro con el icono de comentario, eliminar un comentario propio, añadir o eliminar el libro d [resto de la cadena truncado]&quot;;.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help21">
+            <summary>
+              Busca una cadena traducida similar a Si pulsas sobre el botón de comentarios, aparecerá un modal en el que podrá introducir el texto deseado. Al confirmar, el comentario se añadirá a la lista de comentarios..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help22">
+            <summary>
+              Busca una cadena traducida similar a Para eliminar un comentario, se debe pulsar sobre él y se abrirá un modal de confirmación donde se solicitará verificar la acción. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help23">
+            <summary>
+              Busca una cadena traducida similar a Página de Lectura.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help24">
+            <summary>
+              Busca una cadena traducida similar a Se muestra el contenido del libro en la parte central de la pantalla y se puede acercar o alejar el zoom mediante los botones ubicados en la parte superior. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help25">
+            <summary>
+              Busca una cadena traducida similar a Página de Perfil.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help26">
+            <summary>
+              Busca una cadena traducida similar a Accesible haciendo click en el icono de usuario de la cabecera. Aquí se muestra información personal del usuario, como su imagen de perfil, nombre, correo electrónico y fecha de creación de la cuenta. Además, se incluye una lista de libros marcados como favoritos, desde donde se puede acceder a sus detalles. Desde esta pantalla, el usuario también puede acceder a los ajustes del perfil pulsando el icono en la esquina superior derecha o solicitar un cambio de rol de usuario básico a autor pulsando sobre el e [resto de la cadena truncado]&quot;;.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help27">
+            <summary>
+              Busca una cadena traducida similar a Si un usuario básico selecciona el estado de la cuenta para cambiar a autor, se mostrará un modal de confirmación. En caso de aceptar, la solicitud quedará pendiente de revisión por parte de un administrador. Los usuarios que ya sean autores o que estén en proceso de verificación recibirán un mensaje explicando la razón por la cual no es posible realizar esta acción (Ejemplo: si eres autor dice que no puedes modificar el rol ya que ya eres un autor). .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help28">
+            <summary>
+              Busca una cadena traducida similar a Página de Ajustes de Perfil.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help29">
+            <summary>
+              Busca una cadena traducida similar a Desde esta pantalla los usuarios pueden modificar ciertas configuraciones. Estas opciones son cambiar el nombre, la imagen de perfil o configuraciones para cambiar el tema de la aplicación (claro u oscuro), el tamaño de fuente (pequeña, mediana o grande) y el idioma (español o inglés). Los cambios realizados pueden visualizarse en tiempo real, pero para aplicarlos definitivamente es necesario pulsar el botón de Actualizar..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help3">
+            <summary>
+              Busca una cadena traducida similar a Página de Login.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help30">
+            <summary>
+              Busca una cadena traducida similar a Página de Categorías.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help31">
+            <summary>
+              Busca una cadena traducida similar a En la pantalla de categorías, los administradores pueden visualizar todas las categorías disponibles en la plataforma. Cada categoría se muestra con un icono de papelera asociado, que permite eliminarla con un solo clic. Además, se ofrece un botón destacado para añadir una nueva categoría, el cual abre un formulario sencillo donde se introduce el nombre de la categoría a crear. Para facilitar la navegación entre las distintas páginas del panel de administración, la interfaz incluye una barra de navegación u [resto de la cadena truncado]&quot;;.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help32">
+            <summary>
+              Busca una cadena traducida similar a En el caso de pulsar el icono de la papelera de una categoría se nos muestra un modal de confirmación para asegurar que se desea eliminar dicha categoría. Este modal pregunta al usuario si realmente desea eliminar la categoría seleccionada, con opciones para Confirmar o Cancelar la acción. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help33">
+            <summary>
+              Busca una cadena traducida similar a En el caso de pulsar el botón de añadir una nueva categoría se nos muestra un modal para introducir el nombre de la nueva categoría. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help34">
+            <summary>
+              Busca una cadena traducida similar a Página de Libros.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help35">
+            <summary>
+              Busca una cadena traducida similar a En la pantalla de libros, los administradores pueden visualizar la lista completa de libros que han sido subidos por la comunidad. Al pulsar sobre cualquiera de estos libros, se puede acceder a la vista de detalles, como lo haría un usuario común. Además, los administradores tienen la opción de subir nuevos archivos PDF, utilizando un botón con el respectivo icono, de la misma forma que un autor. Otra funcionalidad importante es la opción de filtrar los libros activando un toggle, lo que permite mostrar úni [resto de la cadena truncado]&quot;;.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help36">
+            <summary>
+              Busca una cadena traducida similar a Al pulsar el icono de los tres puntos, se despliega un modal con diversas opciones disponibles para el libro seleccionado. Las opciones incluyen: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help37">
+            <summary>
+              Busca una cadena traducida similar a Subir: Esta opción solo está disponible para libros que han sido cargados, pero aún están pendientes de aprobación por parte de un autor. Al seleccionar esta opción, el libro se publica y se hace visible para todos los usuarios de la plataforma. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help38">
+            <summary>
+              Busca una cadena traducida similar a Editar: Al seleccionar esta opción, el administrador es redirigido a una pantalla específica para editar los detalles del libro seleccionado. Esto permite modificar información como el título, la descripción, el autor, entre otros. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help39">
+            <summary>
+              Busca una cadena traducida similar a Borrar: Esta opción permite eliminar el libro de manera definitiva. Al seleccionar Borrar, el administrador recibe una confirmación antes de proceder con la eliminación para evitar errores. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help4">
+            <summary>
+              Busca una cadena traducida similar a Se muestra un formulario con dos campos: correo electrónico y contraseña. La contraseña cuenta con un ícono que permite alternar entre mostrarla en texto claro u ocultarla. En esta vista, tieneS tres opciones: iniciar sesión introduciendo correctamente los datos, acceder a la pantalla de recuperación de contraseña (clicando en &apos;¿Has olvidado la contraseña?&apos;) o crear una cuenta nueva pulsando en el texto correspondiente..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help40">
+            <summary>
+              Busca una cadena traducida similar a Al seleccionar la opción de editar, se accede a una pantalla que presenta un formulario prellenado con los datos del libro que se desea modificar. En este formulario, se podrán actualizar los campos más relevantes, como el título, la descripción y la categoría del libro. Esta funcionalidad permite a los administradores realizar ajustes rápidos y precisos a la información de los libros de la plataforma. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help41">
+            <summary>
+              Busca una cadena traducida similar a Página de Subida de libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help42">
+            <summary>
+              Busca una cadena traducida similar a Nueva pantalla accesible desde el botón de la página principal de subir libro, contiene un formulario para completar la información asociada al libro que se desea subir. Este formulario incluye campos como el título, una descripción y la categoría a la que pertenece. Además, se muestra un botón con forma de clip que permite seleccionar el archivo PDF desde el dispositivo del usuario. Una vez que el formulario esté completo, al pulsar el botón de subir, el libro será almacenado y quedará pendiente de revisió [resto de la cadena truncado]&quot;;.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help43">
+            <summary>
+              Busca una cadena traducida similar a Página de Detalles de libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help44">
+            <summary>
+              Busca una cadena traducida similar a Si se selecciona un libro, se redirige a la pantalla de detalles del libro. En esta sección se presenta información relevante sobre el libro, como el título, descripción, categoría, fecha de creación, número de visualizaciones y una lista de comentarios realizados por otros usuarios. Desde esta página, los usuarios pueden interactuar de diferentes maneras: añadir un comentario pulsando el botón negro con el icono de comentario, eliminar un comentario, añadir o eliminar el libro de su lista de favoritos medi [resto de la cadena truncado]&quot;;.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help45">
+            <summary>
+              Busca una cadena traducida similar a Si pulsas sobre el botón de comentarios, aparecerá un modal en el que podrá introducir el texto deseado. Al confirmar, el comentario se añadirá a la lista de comentarios..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help46">
+            <summary>
+              Busca una cadena traducida similar a Para eliminar un comentario, se debe pulsar sobre él y se abrirá un modal de confirmación donde se solicitará verificar la acción. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help47">
+            <summary>
+              Busca una cadena traducida similar a Página de Usuarios.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help48">
+            <summary>
+              Busca una cadena traducida similar a En la pantalla de usuarios, se muestra una lista de los usuarios registrados en la aplicación, excluyendo aquellos con el rol de administrador, ya que la gestión de este tipo de usuarios se realiza directamente en Firebase, donde se asignan y eliminan los roles. Desde esta pantalla, es posible eliminar usuarios simplemente pulsando el icono de la papelera asociado a cada uno. Además, se puede filtrar la lista activando un toggle que permite mostrar solo aquellos usuarios que han solicitado ser autores y est [resto de la cadena truncado]&quot;;.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help49">
+            <summary>
+              Busca una cadena traducida similar a En el caso de pulsar el icono de tres puntos asociado a usuarios pendientes, se mostrará un modal que permite al administrador aceptar o denegar el cambio de rol de dicho usuario a autor. Si se opta por denegar la solicitud, el rol del usuario volverá a ser el de usuario estándar, y este podrá solicitar nuevamente convertirse en autor en el futuro si así lo desea. .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help5">
+            <summary>
+              Busca una cadena traducida similar a Página de Recuperar Contaseña.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help50">
+            <summary>
+              Busca una cadena traducida similar a Página de Perfil.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help51">
+            <summary>
+              Busca una cadena traducida similar a Accesible haciendo click en el icono de usuario de la cabecera. Aquí se muestra información personal del usuario, como su imagen de perfil, nombre, correo electrónico y fecha de creación de la cuenta. Además, se incluye una lista de libros marcados como favoritos, desde donde se puede acceder a sus detalles. Desde esta pantalla, el usuario también puede acceder a los ajustes del perfil pulsando el icono en la esquina superior derecha..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help6">
+            <summary>
+              Busca una cadena traducida similar a Se muestra un campo donde puedes introducir el correo asociado a la cuenta. Tras enviar el formulario, la aplicación envía un correo con las instrucciones para restablecer la contraseña..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help7">
+            <summary>
+              Busca una cadena traducida similar a Página de Registro .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help8">
+            <summary>
+              Busca una cadena traducida similar a Se muestra un formulario que solicita información como nombre, correo válido, contraseña (de al menos seis caracteres) y confirmación de esta. Si no existe una cuenta asociada al correo ingresado, se completa el registro y se redirige al usuario a la pantalla de inicio de sesión para acceder con las nuevas credenciales..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.help9">
+            <summary>
+              Busca una cadena traducida similar a Página Principal: Obras Públicas.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnAddComment">
+            <summary>
+              Busca una cadena traducida similar a Añadiendo comentario.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnAddedFav">
+            <summary>
+              Busca una cadena traducida similar a Añadido a favoritos.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnAskDelBook">
+            <summary>
+              Busca una cadena traducida similar a ¿Estás seguro de que desea eliminar el libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnAskDelete">
+            <summary>
+              Busca una cadena traducida similar a ¿Estás seguro de que desea eliminar la categoría .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnAskVerify">
+            <summary>
+              Busca una cadena traducida similar a ¿Estas seguro de querer verificar tu usuario .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnCheckFav">
+            <summary>
+              Busca una cadena traducida similar a Error al comprobar si es favorito: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnCheckPassword">
+            <summary>
+              Busca una cadena traducida similar a Las contraseñas no coinciden.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnCheckUser">
+            <summary>
+              Busca una cadena traducida similar a Comprobando usuario....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnComentAdded">
+            <summary>
+              Busca una cadena traducida similar a Comentario añadido.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnComentDeleted">
+            <summary>
+              Busca una cadena traducida similar a Comentario eliminado.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnConfirmDelComment">
+            <summary>
+              Busca una cadena traducida similar a ¿Estás seguro de que deseas eliminar este mensaje?.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnCPassword">
+            <summary>
+              Busca una cadena traducida similar a Confirma tu contraseña.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnCreateUser">
+            <summary>
+              Busca una cadena traducida similar a Creando cuenta....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnDelAux">
+            <summary>
+              Busca una cadena traducida similar a Borrando registro provisional....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnDelBook">
+            <summary>
+              Busca una cadena traducida similar a Borrar Libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnDelComment">
+            <summary>
+              Busca una cadena traducida similar a Eliminar comentario.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnDeleteCategory">
+            <summary>
+              Busca una cadena traducida similar a Borrar Categoría.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnDeletedFav">
+            <summary>
+              Busca una cadena traducida similar a Eliminado de favoritos.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnDeletingBook">
+            <summary>
+              Busca una cadena traducida similar a Eliminando libro....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnDeletingCat">
+            <summary>
+              Busca una cadena traducida similar a Eliminando categoría....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnEmail">
+            <summary>
+              Busca una cadena traducida similar a Introduce un email válido.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnErrorBook">
+            <summary>
+              Busca una cadena traducida similar a Error al cargar el libro: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnErrorCreateUser">
+            <summary>
+              Busca una cadena traducida similar a Fallo al crear la cuenta: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnErrorCreden">
+            <summary>
+              Busca una cadena traducida similar a Error al leer credenciales: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnErrorImage">
+            <summary>
+              Busca una cadena traducida similar a No se pudo seleccionar la imagen..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnErrorLoadUser">
+            <summary>
+              Busca una cadena traducida similar a Error al cargar la información del usuario: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnErrorRequest">
+            <summary>
+              Busca una cadena traducida similar a Fallo al solicitar la petición: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnFailAddedFav">
+            <summary>
+              Busca una cadena traducida similar a Fallo al añadir a favoritos: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnFailComment">
+            <summary>
+              Busca una cadena traducida similar a Fallo al añadir el comentario: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnFailDelComent">
+            <summary>
+              Busca una cadena traducida similar a Fallo al eliminar el comentario: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnFailDeletedFav">
+            <summary>
+              Busca una cadena traducida similar a Fallo al eliminar de favoritos: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnFailLog">
+            <summary>
+              Busca una cadena traducida similar a Fallo al iniciar sesión: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnFailSaveUser">
+            <summary>
+              Busca una cadena traducida similar a Fallo al guardar al usuario: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnFailUpdatePerfil">
+            <summary>
+              Busca una cadena traducida similar a Fallo al actualizar el perfil: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnFailUploadImage">
+            <summary>
+              Busca una cadena traducida similar a Fallo al actualizar la imagen:.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnFailUser">
+            <summary>
+              Busca una cadena traducida similar a Fallo al comprobar el usuario: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnInfoVerify">
+            <summary>
+              Busca una cadena traducida similar a Se actualizará tu cuenta a una de escritor tras ser procesada tu solicitud..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnLogin">
+            <summary>
+              Busca una cadena traducida similar a Iniciando sesión....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnName">
+            <summary>
+              Busca una cadena traducida similar a Introduce tu nombre.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnNewCategory">
+            <summary>
+              Busca una cadena traducida similar a Nueva Categoría.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnNewComment">
+            <summary>
+              Busca una cadena traducida similar a Nuevo Comentario.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnNoUserFound">
+            <summary>
+              Busca una cadena traducida similar a Usuario no encontrado.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnPassword">
+            <summary>
+              Busca una cadena traducida similar a Introduce tu contraseña (6 caracteres mínimo).
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnPendingVerified">
+            <summary>
+              Busca una cadena traducida similar a Verificación pendiente de ser aprobada.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnSaveUser">
+            <summary>
+              Busca una cadena traducida similar a Guardando la información del usuario....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnSendedEmail">
+            <summary>
+              Busca una cadena traducida similar a Correo enviado a: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnSendEmail">
+            <summary>
+              Busca una cadena traducida similar a Enviando correo a .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnSendFail">
+            <summary>
+              Busca una cadena traducida similar a Fallo al enviar el correo a .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnSuccesRequest">
+            <summary>
+              Busca una cadena traducida similar a Solicitud creada con éxito.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnSuccessUploadPerfil">
+            <summary>
+              Busca una cadena traducida similar a Perfil actualizado con éxito.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnSuccesUser">
+            <summary>
+              Busca una cadena traducida similar a Usuario creado con éxito.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnUpdatePerfil">
+            <summary>
+              Busca una cadena traducida similar a Actualizando perfil....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnUploadImage">
+            <summary>
+              Busca una cadena traducida similar a Subiendo imagen....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.msnVerified">
+            <summary>
+              Busca una cadena traducida similar a Ya estas verificado.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.noVerificado">
+            <summary>
+              Busca una cadena traducida similar a No verificado.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.opAdmin">
+            <summary>
+              Busca una cadena traducida similar a Administrador.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.opBiblioteca">
+            <summary>
+              Busca una cadena traducida similar a Biblioteca.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.opConfig">
+            <summary>
+              Busca una cadena traducida similar a Configuración.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.opInicio">
+            <summary>
+              Busca una cadena traducida similar a Inicio.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.opLeer">
+            <summary>
+              Busca una cadena traducida similar a Leer libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.opLibro">
+            <summary>
+              Busca una cadena traducida similar a Detalles del libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.opPerfil">
+            <summary>
+              Busca una cadena traducida similar a Perfil de usuario.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phCategory">
+            <summary>
+              Busca una cadena traducida similar a Ej: Ciencia Ficción.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phComent">
+            <summary>
+              Busca una cadena traducida similar a Escribe tu comentario....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phCon">
+            <summary>
+              Busca una cadena traducida similar a Contraseña.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phCorreo">
+            <summary>
+              Busca una cadena traducida similar a Correo.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phDescripcion">
+            <summary>
+              Busca una cadena traducida similar a Descripción del libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phEmail">
+            <summary>
+              Busca una cadena traducida similar a Correo electrónico.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phEmailrecover">
+            <summary>
+              Busca una cadena traducida similar a Email de recuperación.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phPassword">
+            <summary>
+              Busca una cadena traducida similar a Introduzca la contraseña.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phRepCon">
+            <summary>
+              Busca una cadena traducida similar a Repite la contraseña.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phTitulo">
+            <summary>
+              Busca una cadena traducida similar a Título del libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.phUsuario">
+            <summary>
+              Busca una cadena traducida similar a Nombre.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.searchCategory">
+            <summary>
+              Busca una cadena traducida similar a Buscar Categoría....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.searchName">
+            <summary>
+              Busca una cadena traducida similar a Buscar Nombre....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.searchTitle">
+            <summary>
+              Busca una cadena traducida similar a Buscar título....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAceptar">
+            <summary>
+              Busca una cadena traducida similar a Aceptar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAddCategoria">
+            <summary>
+              Busca una cadena traducida similar a Añadir categoría.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAddComment">
+            <summary>
+              Busca una cadena traducida similar a Añadir Comentario.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAddNewBook">
+            <summary>
+              Busca una cadena traducida similar a Por favor, rellene todos los datos a continuación para solicitar la publicación de su libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAdministrador">
+            <summary>
+              Busca una cadena traducida similar a Administrador:.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAjustes">
+            <summary>
+              Busca una cadena traducida similar a Ajustes.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAjustes2">
+            <summary>
+              Busca una cadena traducida similar a Ajustes de usuario.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAlreadyCat">
+            <summary>
+              Busca una cadena traducida similar a La categoría ya existe.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAskCat">
+            <summary>
+              Busca una cadena traducida similar a Selecciona una categoría.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAskDeleteUser">
+            <summary>
+              Busca una cadena traducida similar a ¿Estás seguro de que desea eliminar al usuario: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAskDesc">
+            <summary>
+              Busca una cadena traducida similar a Introduce la descripción.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAskpdf">
+            <summary>
+              Busca una cadena traducida similar a Selecciona un PDF.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAskTitulo">
+            <summary>
+              Busca una cadena traducida similar a Introduce el título.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAutor">
+            <summary>
+              Busca una cadena traducida similar a Autor: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtAyuda">
+            <summary>
+              Busca una cadena traducida similar a Ayuda.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtBienvenida">
+            <summary>
+              Busca una cadena traducida similar a Bienvenido a Besoculto.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtBorrar">
+            <summary>
+              Busca una cadena traducida similar a Borrar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtCategoria">
+            <summary>
+              Busca una cadena traducida similar a Categoría: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtCategorias">
+            <summary>
+              Busca una cadena traducida similar a Categorías.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtCategoryBook">
+            <summary>
+              Busca una cadena traducida similar a Categoría del libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtCatOk">
+            <summary>
+              Busca una cadena traducida similar a Categoría creada correctamente.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtClaro">
+            <summary>
+              Busca una cadena traducida similar a Claro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtComent">
+            <summary>
+              Busca una cadena traducida similar a Introduce un comentario:.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtComentario">
+            <summary>
+              Busca una cadena traducida similar a Comentarios.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtConfirmar">
+            <summary>
+              Busca una cadena traducida similar a Confirmar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtCuenta">
+            <summary>
+              Busca una cadena traducida similar a Cuenta.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtDeleteUser">
+            <summary>
+              Busca una cadena traducida similar a Borrar Usuario.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtDeletingUser">
+            <summary>
+              Busca una cadena traducida similar a Eliminando usuario....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtDenegar">
+            <summary>
+              Busca una cadena traducida similar a Denegar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtEditar">
+            <summary>
+              Busca una cadena traducida similar a Editar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtEditBook">
+            <summary>
+              Busca una cadena traducida similar a Editar información del libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtEditorial">
+            <summary>
+              Busca una cadena traducida similar a Editorial: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtEliminar">
+            <summary>
+              Busca una cadena traducida similar a Eliminar.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtEnterCat">
+            <summary>
+              Busca una cadena traducida similar a Introduce el nombre de la categoría:.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtErrorPdf">
+            <summary>
+              Busca una cadena traducida similar a Error al leer el PDF: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtEspanol">
+            <summary>
+              Busca una cadena traducida similar a Español.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtEstadoCuenta">
+            <summary>
+              Busca una cadena traducida similar a Estado de la cuenta.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFailCat">
+            <summary>
+              Busca una cadena traducida similar a No se pudo crear la categoría: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFailUpdateInfo">
+            <summary>
+              Busca una cadena traducida similar a Fallo al actualizar la información del documento: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFailUpload">
+            <summary>
+              Busca una cadena traducida similar a Fallo al subir el documento.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFailUploadInfo">
+            <summary>
+              Busca una cadena traducida similar a Fallo al subir la información del documento: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFav">
+            <summary>
+              Busca una cadena traducida similar a Favorito.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFavAdd">
+            <summary>
+              Busca una cadena traducida similar a Añadir a favoritos.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFavDel">
+            <summary>
+              Busca una cadena traducida similar a Eliminar de favoritos.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFecha">
+            <summary>
+              Busca una cadena traducida similar a Fecha:.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFilterpending">
+            <summary>
+              Busca una cadena traducida similar a Filtrar por pendientes.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtFontsize">
+            <summary>
+              Busca una cadena traducida similar a Tamaño de fuente.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtGrande">
+            <summary>
+              Busca una cadena traducida similar a Grande.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtIdioma">
+            <summary>
+              Busca una cadena traducida similar a Idioma.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtIngles">
+            <summary>
+              Busca una cadena traducida similar a Inglés.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtISBN">
+            <summary>
+              Busca una cadena traducida similar a ISBN: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtLectura">
+            <summary>
+              Busca una cadena traducida similar a Lectura.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtLibros">
+            <summary>
+              Busca una cadena traducida similar a Libros.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtLibrosFav">
+            <summary>
+              Busca una cadena traducida similar a Libros favoritos.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtLoadingBooks">
+            <summary>
+              Busca una cadena traducida similar a Cargando más libros ....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtLogin">
+            <summary>
+              Busca una cadena traducida similar a Conéctate, por favor.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtMediana">
+            <summary>
+              Busca una cadena traducida similar a Mediana.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtMiembro">
+            <summary>
+              Busca una cadena traducida similar a Miembro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtMostViewed">
+            <summary>
+              Busca una cadena traducida similar a Más vistos.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoAutor">
+            <summary>
+              Busca una cadena traducida similar a Autor desconocido.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoBook">
+            <summary>
+              Busca una cadena traducida similar a El libro no existe en la base de datos..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoCategoria">
+            <summary>
+              Busca una cadena traducida similar a Sin categoría.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoCategories">
+            <summary>
+              Busca una cadena traducida similar a No hay categorías disponibles en este momento..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoComent">
+            <summary>
+              Busca una cadena traducida similar a No hay Comentarios disponibles en este momento..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoDescripcion">
+            <summary>
+              Busca una cadena traducida similar a Sin descripción.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoFecha">
+            <summary>
+              Busca una cadena traducida similar a Fecha desconocida.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoFile">
+            <summary>
+              Busca una cadena traducida similar a No se seleccionó ningún archivo..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoLibros">
+            <summary>
+              Busca una cadena traducida similar a No hay libros disponibles en este momento..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoLibrosFav">
+            <summary>
+              Busca una cadena traducida similar a No hay libros favoritos..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoLogin">
+            <summary>
+              Busca una cadena traducida similar a No estas logeado.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNombreUsuario">
+            <summary>
+              Busca una cadena traducida similar a Nombre de Usuario.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoTitulo">
+            <summary>
+              Busca una cadena traducida similar a Título desconocido.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoUser">
+            <summary>
+              Busca una cadena traducida similar a Usario desconocido.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNoUsers">
+            <summary>
+              Busca una cadena traducida similar a No hay usuarios disponibles en este momento..
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtNovedades">
+            <summary>
+              Busca una cadena traducida similar a Novedades.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtOlvidaCon">
+            <summary>
+              Busca una cadena traducida similar a ¿Olvidaste tu contraseña?.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtOscuro">
+            <summary>
+              Busca una cadena traducida similar a Oscuro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtPageInit">
+            <summary>
+              Busca una cadena traducida similar a Página de inicio.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtPages">
+            <summary>
+              Busca una cadena traducida similar a Páginas:.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtPdfDispositivo">
+            <summary>
+              Busca una cadena traducida similar a Leer Pdf del dispositivo.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtPequena">
+            <summary>
+              Busca una cadena traducida similar a Pequeña.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtPublicBooks">
+            <summary>
+              Busca una cadena traducida similar a Obras Públicas.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtRegistrarse">
+            <summary>
+              Busca una cadena traducida similar a Crea una cuenta nueva.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtRegistro">
+            <summary>
+              Busca una cadena traducida similar a Registro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtRequestLog">
+            <summary>
+              Busca una cadena traducida similar a Inicia sesión para acceder a tu perfil.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtSalir">
+            <summary>
+              Busca una cadena traducida similar a Salir.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtSelected">
+            <summary>
+              Busca una cadena traducida similar a Seleccionado el archivo: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtSinopsis">
+            <summary>
+              Busca una cadena traducida similar a Sinopsis: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtSuccess">
+            <summary>
+              Busca una cadena traducida similar a Éxito.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtSuccesUpload">
+            <summary>
+              Busca una cadena traducida similar a Información subida con éxito, pendiente de aprobación por un administrador.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtSuccesUploadInfo">
+            <summary>
+              Busca una cadena traducida similar a Información actualizada con éxito.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtTamano">
+            <summary>
+              Busca una cadena traducida similar a Tamaño: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtTema">
+            <summary>
+              Busca una cadena traducida similar a Tema.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtTitulo">
+            <summary>
+              Busca una cadena traducida similar a Título: .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtUpdateRol">
+            <summary>
+              Busca una cadena traducida similar a Rol del usuario actualizado.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtUploadBook">
+            <summary>
+              Busca una cadena traducida similar a Subir libro.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtUploadInfo">
+            <summary>
+              Busca una cadena traducida similar a Subiendo la información del documento... .
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtUploading">
+            <summary>
+              Busca una cadena traducida similar a Subiendo el documento....
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtUserAccount">
+            <summary>
+              Busca una cadena traducida similar a Cuenta de Usuario.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtUsuario">
+            <summary>
+              Busca una cadena traducida similar a Usuario:.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtUsuarios">
+            <summary>
+              Busca una cadena traducida similar a Usuarios.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtVerificar">
+            <summary>
+              Busca una cadena traducida similar a Verificar correo.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtVisualizaciones">
+            <summary>
+              Busca una cadena traducida similar a Visualizaciones:.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.txtWarning">
+            <summary>
+              Busca una cadena traducida similar a Advertencia.
+            </summary>
+        </member>
+        <member name="P:AppProyectoFinal.Resources.Languages.AppResources.verificado">
+            <summary>
+              Busca una cadena traducida similar a Verificado.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Ayuda.InitializeData">
+            <summary>
+            Configura la vista de la página en función del tipo de usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Ayuda.OnAppearing">
+            <summary>
+            Método para que se ejecuta cuando aparece la ContentPage.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.BookModal.#ctor(AppProyectoFinal.Data.ModelPdf,System.Boolean)">
+            <summary>
+            Modal donde se muestran las opciones a realizar sobre un libro
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.BookModal.OnEditClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para guardar la opción seleccionada y cerrar el modal
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.BookModal.OnDeleteClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para guardar la opción seleccionada y cerrar el modal
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.BookModal.OnUploadClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para guardar la opción seleccionada y cerrar el modal
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.BookModal.OnCancelClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para guardar la opción seleccionada y cerrar el modal
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.BookModal.CloseModal">
+            <summary>
+            Método para cerrar el modal
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnTextChanged(System.Object,Microsoft.Maui.Controls.TextChangedEventArgs)">
+            <summary>
+            Metodo que filtra los libros por título usando el texto introducido en la barra de busqueda.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.RemoveDiacritics(System.String)">
+            <summary>
+            Metodo que normaliza el texto eliminando tildes.
+            <list type="number">
+            <item><param name="text">Texto a normalizar</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve el valor de entrada normalizado.</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.LoadBooks">
+            <summary>
+            Carga todos los libros desde Books en Firebase y los añade a la colección AllBooks.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.LoadCategoryForBook(AppProyectoFinal.Data.ModelPdf)">
+            <summary>
+            Carga la categoría de un libro específico consultando Categories en Firebase.
+            <list type="number">
+            <item><param name="book">Instancia de ModelPdf que representa el libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.LoadPdfImage(AppProyectoFinal.Data.ModelPdf)">
+            <summary>
+            Genera y establece la imagen de portada del PDF para el libro.
+            <list type="number">
+            <item><param name="book">Instancia de ModelPdf que representa el libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnAddBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Metodo que te lleva a la vista de editar/subir un libro
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnShowOptionsBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Metodo para editar o borrar libro
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.ModalPage_OnResult(AppProyectoFinal.Data.ModelPdf,System.String)">
+            <summary>
+            Método que espera el resultado del modal de editar o borrar libro
+            <list type="number">
+            <item><param name="selectedBook">Libro del evento</param></item>
+            <item><param name="result">Resultado del modal</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnOptionsBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Metodo para editar o borrar libro (click derecho)
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnDoOptionsBookClicked(System.String,AppProyectoFinal.Data.ModelPdf)">
+            <summary>
+            Metodo que procesa la seleccion de la opcion del libor hecha
+            <list type="number">
+            <item><param name="result">seleccion hecha</param></item>
+            <item><param name="selectedBook">libro vinculado</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnSwitchBooksToggled(System.Object,Microsoft.Maui.Controls.ToggledEventArgs)">
+            <summary>
+            Alterna la visualización de libros subidos o pendientes
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnProfileClicked(System.Object,System.EventArgs)">
+            <summary>
+            Si el usuario esta logeado navega a la página de su perfil.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnLogoutClicked(System.Object,System.EventArgs)">
+            <summary>
+            Deslogea al usuario si lo esta y navega a la página de inicio.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnBackButtonPressed">
+            <summary>
+            Al salir deslogearse si lo esta
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.UpdateBooksCollection">
+            <summary>
+            Metodo para actualizar la collecion de libros tras un cambio.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.OnBookSelected(System.Object,Microsoft.Maui.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Evento al seleccionar un libro. Navega a la página de detalle
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.gotoCategoryPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de las categorias.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.gotoUsersPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los usuarios.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardBooks.gotoAyudaClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de Ayuda.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.OnTextChanged(System.Object,Microsoft.Maui.Controls.TextChangedEventArgs)">
+            <summary>
+            Metodo que filtra los libros por título usando el texto introducido en la barra de busqueda.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.RemoveDiacritics(System.String)">
+            <summary>
+            Metodo que normaliza el texto eliminando tildes.
+            <list type="number">
+            <item><param name="text">Texto a normalizar</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve el valor de entrada normalizado.</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.LoadCategories">
+            <summary>
+            Carga todas las categorias de Firebase y los añade a la colección AllCategories.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.OnDeleteCategoryClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para eliminar una categoría
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.OnAddCategoryClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para añadir una categoría
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.NormalizeString(System.String)">
+            <summary>
+            Método para normalizar el texto
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.OnProfileClicked(System.Object,System.EventArgs)">
+            <summary>
+            Si el usuario esta logeado navega a la página de su perfil.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.OnLogoutClicked(System.Object,System.EventArgs)">
+            <summary>
+            Deslogea al usuario si lo esta y navega a la página de inicio.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.OnBackButtonPressed">
+            <summary>
+            Al salir deslogearse si lo esta
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.gotoBookPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los libros subidos.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.gotoUsersPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los usuarios.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardCategories.gotoAyudaClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de Ayuda.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.InitializeData">
+            <summary>
+            Configura la vista de la página en función del tipo de usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.OnTextChanged(System.Object,Microsoft.Maui.Controls.TextChangedEventArgs)">
+            <summary>
+            Metodo que filtra los libros por título usando el texto introducido en la barra de busqueda.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.RemoveDiacritics(System.String)">
+            <summary>
+            Metodo que normaliza el texto eliminando tildes.
+            <list type="number">
+            <item><param name="text">Texto a normalizar</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve el valor de entrada normalizado.</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.LoadBooks">
+            <summary>
+            Carga todos los libros desde Books en Firebase y los añade a la colección AllBooks.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.LoadCategoryForBook(AppProyectoFinal.Data.ModelPdf)">
+            <summary>
+            Carga la categoría de un libro específico consultando Categories en Firebase.
+            <list type="number">
+            <item><param name="book">Instancia de ModelPdf que representa el libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.LoadPdfImage(AppProyectoFinal.Data.ModelPdf)">
+            <summary>
+            Genera y establece la imagen de portada del PDF para el libro.
+            <list type="number">
+            <item><param name="book">Instancia de ModelPdf que representa el libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.OnBookSelected(System.Object,Microsoft.Maui.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Evento al seleccionar un libro. Navega a la página de detalle.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.OnProfileClicked(System.Object,System.EventArgs)">
+            <summary>
+            Si el usuario esta logeado navega a la página de su perfil.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.OnLogoutClicked(System.Object,System.EventArgs)">
+            <summary>
+            Deslogea al usuario si lo esta y navega a la página de inicio.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.OnBackButtonPressed">
+            <summary>
+            Al salir deslogearse si lo esta
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.OnReadBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que permite leer a un usuario un pdf de su equipo.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.OnAddBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que permite a un autor subir un pdf de su equipo.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.gotoViewedPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los libros más vistos.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.gotoPublicPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los libros públicos.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardNewBooks.gotoAyudaClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de Ayuda.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.InitializeData">
+            <summary>
+            Configura la vista de la página en función del tipo de usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.OnTextChanged(System.Object,Microsoft.Maui.Controls.TextChangedEventArgs)">
+            <summary>
+            Metodo que filtra los libros por título usando el texto introducido en la barra de busqueda.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.RemoveDiacritics(System.String)">
+            <summary>
+            Metodo que normaliza el texto eliminando tildes.
+            <list type="number">
+            <item><param name="text">Texto a normalizar</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve el valor de entrada normalizado.</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.LoadGutembergBooks">
+            <summary>
+            Carga libros de Gutenberg y Google Books mediante APIs y los añade a GutenbergBooks.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.OnBookSelected(System.Object,Microsoft.Maui.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Evento al seleccionar un libro. Navega a la página de detalle y actualiza la base de datos si es un libro de Gutenberg.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.OnScrollViewScrolled(System.Object,Microsoft.Maui.Controls.ScrolledEventArgs)">
+            <summary>
+            Metodo que carga más contenido al llegar al fin del scroll
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.OnProfileClicked(System.Object,System.EventArgs)">
+            <summary>
+            Si el usuario esta logeado navega a la página de su perfil.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.OnLogoutClicked(System.Object,System.EventArgs)">
+            <summary>
+            Deslogea al usuario si lo esta y navega a la página de inicio.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.OnBackButtonPressed">
+            <summary>
+            Al salir deslogearse si lo esta
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.OnReadBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que permite leer a un usuario un pdf de su equipo.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.OnAddBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que permite a un autor subir un pdf de su equipo.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.gotoNewPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los libros más vistos.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.gotoViewedPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los libros más vistos.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardPublicBooks.gotoAyudaClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de Ayuda.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.OnTextChanged(System.Object,Microsoft.Maui.Controls.TextChangedEventArgs)">
+            <summary>
+            Metodo que filtra los libros por título usando el texto introducido en la barra de busqueda.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.RemoveDiacritics(System.String)">
+            <summary>
+            Metodo que normaliza el texto eliminando tildes.
+            <list type="number">
+            <item><param name="text">Texto a normalizar</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve el valor de entrada normalizado.</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.LoadUsers">
+            <summary>
+            Carga todos los usuarios de Firebase y los añade a la colección AllUsers.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.OnDeleteUserClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para eliminar un usuario
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.OnOptionsUserClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para cambiar el rol de un usuario
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.ModalPage_OnResult(AppProyectoFinal.Data.ModelUser,System.String)">
+            <summary>
+            Método que espera el resultado del modal del cambio de rol de un usuario
+            <list type="number">
+            <item><param name="user">Usuario del evento</param></item>
+            <item><param name="result">Resultado del modal</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.OnSwitchUsersToggled(System.Object,Microsoft.Maui.Controls.ToggledEventArgs)">
+            <summary>
+            Alterna la visualización de todos los usarios o pendientes
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.OnProfileClicked(System.Object,System.EventArgs)">
+            <summary>
+            Si el usuario esta logeado navega a la página de su perfil.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.OnLogoutClicked(System.Object,System.EventArgs)">
+            <summary>
+            Deslogea al usuario si lo esta y navega a la página de inicio.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.OnBackButtonPressed">
+            <summary>
+            Al salir deslogearse si lo esta
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.UpdateUserCollection">
+            <summary>
+            Metodo para actualizar la collecion de usuarios tras un cambio.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.gotoCategoryPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de las categorias.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.gotoBookPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los libros subidos.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardUsers.gotoAyudaClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de Ayuda.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.InitializeData">
+            <summary>
+            Configura la vista de la página en función del tipo de usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.OnTextChanged(System.Object,Microsoft.Maui.Controls.TextChangedEventArgs)">
+            <summary>
+            Metodo que filtra los libros por título usando el texto introducido en la barra de busqueda.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.RemoveDiacritics(System.String)">
+            <summary>
+            Metodo que normaliza el texto eliminando tildes.
+            <list type="number">
+            <item><param name="text">Texto a normalizar</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve el valor de entrada normalizado.</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.LoadMostViewedBooks">
+            <summary>
+            Carga los libros más vistos desde Books en Firebase en orden de visualizaciones y los añade a la colección MostViewedBooks.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.LoadCategoryForBook(AppProyectoFinal.Data.ModelPdf)">
+            <summary>
+            Carga la categoría de un libro específico consultando Categories en Firebase.
+            <list type="number">
+            <item><param name="book">Instancia de ModelPdf que representa el libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.LoadPdfImage(AppProyectoFinal.Data.ModelPdf)">
+            <summary>
+            Genera y establece la imagen de portada del PDF para el libro.
+            <list type="number">
+            <item><param name="book">Instancia de ModelPdf que representa el libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.OnBookSelected(System.Object,Microsoft.Maui.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Evento al seleccionar un libro. Navega a la página de detalle y actualiza la base de datos si es un libro de Gutenberg.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.OnProfileClicked(System.Object,System.EventArgs)">
+            <summary>
+            Si el usuario esta logeado navega a la página de su perfil.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.OnLogoutClicked(System.Object,System.EventArgs)">
+            <summary>
+            Deslogea al usuario si lo esta y navega a la página de inicio.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.OnBackButtonPressed">
+            <summary>
+            Al salir deslogearse si lo esta
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.OnReadBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que permite leer a un usuario un pdf de su equipo.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.OnAddBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que permite a un autor subir un pdf de su equipo.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.gotoNewPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los libros más vistos.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.gotoPublicPageClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de los libros públicos.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.DashBoardViewedBooks.gotoAyudaClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de Ayuda.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.EditPdfData.InitializeData">
+            <summary>
+            Método inicializar los datos
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.EditPdfData.OnAttachPdfClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para añadir el documento del libro
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.EditPdfData.GetPdfPageCountAsync(Microsoft.Maui.Storage.FileResult)">
+            <summary>
+            Método obtener el numero de páginas del libro
+            <list type="number">
+            <item><param name="pdfFile">archivo sobre el que contar páginas</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.EditPdfData.OnUploadBookClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que valida los datos e inicia el proceso para subir el libro
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.EditPdfData.UploadPdfToStorage(System.String,System.String,System.String)">
+            <summary>
+            Método que sube el documento pdf a Storage
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.EditPdfData.UploadPdfInfoToDbAsync(System.String,System.Int64,System.String,System.String,System.String)">
+            <summary>
+            Método que sube los datos del libro a la BBDD
+            <list type="number">
+            <item><param name="uploadedPdfUrl">Url del archivo pdf</param></item>
+            <item><param name="timestamp">id del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ForgotPassword.#ctor">
+            <summary>
+            Página donde se puede recuperar la contraseña si se ha perdido
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ForgotPassword.doRecuperarPassword_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para iniciar la recuperación de contraseña
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ForgotPassword.ValidateData">
+            <summary>
+            Método que comprueba la validez de los datos introducidos para la recuperación de contraseña
+            </summary>
+            <returns>Tarea asíncrona que devuelve un booleano con el resultado de la comprobación de datos</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ForgotPassword.RecoverPassword">
+            <summary>
+            Método que envía la nueva contraseña al correo introducido
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.#ctor(System.String,System.String,System.IO.Stream)">
+            <summary>
+            Página donde se puede leer el contenido de un libro
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.LoadEpub">
+            <summary>
+            Carga el contenido de un epub y lo muestra por pantalla
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.SplitContent(System.String,System.Int32)">
+            <summary>
+            Divide el contenido en partes más pequeñas de un tamaño máximo especificado.
+            <list type="number">
+            <item><param name="content">contenido a dividir</param></item>
+            <item><param name="maxLength">maximo tamaño de cada parte</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.EnableLazyLoading(System.Collections.Generic.List{System.String})">
+            <summary>
+            Habilita la carga perezosa de contenido en el WebView.
+            <list type="number">
+            <item><param name="contentParts">partes del contenido</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.LoadPdfImages">
+            <summary>
+            Carga el contenido de un pdf y lo muestra por pantalla a través de imagenes
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.LoadUserPdfImages">
+            <summary>
+            Carga el contenido de un pdf del usuario y lo muestra por pantalla a través de imagenes
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.CleanupCachedImages">
+            <summary>
+            Limpia de la cache los archivos descargados 
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.ZoomIn_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Evento de hacer zoom del contenido
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.ZoomOut_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Evento de deshacer zoom del contenido
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Lectura.ApplyZoom">
+            <summary>
+            Aplica las opciones de zoom al webview de epub
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.#ctor(System.String,System.String)">
+            <summary>
+            Página donde se puede ver los detalles de un libro
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.CheckIsFavorite">
+            <summary>
+            Comprueba si es un libro que el usuario tiene guardado como favorito
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.IncrementBookViewCount(System.String,System.String)">
+            <summary>
+            Aumenta el valor de visualizaciones del libro
+            <list type="number">
+            <item><param name="bookId">Identificador del libro</param></item>
+            <item><param name="type">Tipo del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.LoadBookDetails(System.String,System.String)">
+            <summary>
+            Carga la información del libro
+            <list type="number">
+            <item><param name="bookId">Identificador del libro</param></item>
+            <item><param name="type">Tipo del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.LoadCategoryForBook(System.String)">
+            <summary>
+            Carga la información de la categoría correspondiente al libro
+            <list type="number">
+            <item><param name="categoryId">Identificador de la categoría del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.LoadPdfImage(System.String)">
+            <summary>
+            Carga la portada del libro
+            <list type="number">
+            <item><param name="bookId">Identificador del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.goLectura_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Navegación hacia la lectura del libro
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.ShowComments(System.String)">
+            <summary>
+            Carga los comentarios del libro
+            <list type="number">
+            <item><param name="type">Tipo del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.LoadUserDetailsAsync(AppProyectoFinal.Data.ModelComment)">
+            <summary>
+            Carga los datos asociados al usuario que ha hecho un comentario
+            <list type="number">
+            <item><param name="model">Objeto con la información del comentario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.goComment_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Navegación hacia el diálogo de creación de comentarios
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.AddCommentDialogAsync">
+            <summary>
+            Crea el diálogo para introducir y añadir comentarios
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.OnCommentSelected(System.Object,Microsoft.Maui.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Metodo para el control de eliminar comentarios
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.DeleteCommentDialog(AppProyectoFinal.Data.ModelComment)">
+            <summary>
+            Elimina el comentario de la BBDD
+            <list type="number">
+            <item><param name="comment">Comentario a eliminar</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.goFav_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Controla las opciones de eliminar/añadir a favoritos
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.AddToFavoriteAsync">
+            <summary>
+            Método para añadir  el libro a favoritos guardandolo en BBDD
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Libro.RemoveFromFavoriteAsync">
+            <summary>
+            Método para eliminar el libro de favoritos y guardarlo en BBDD
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Login.#ctor">
+            <summary>
+            Página donde se puede logear un usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Login.doLogin_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que comprueba los datos introducidos e inicia el login del usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Login.goForgotPassword_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te dirige a la página de recuperación de contraseña
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Login.goRegistro_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te dirige a la página de registro de nuevos usuarios
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Login.OnEyeButtonClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para ver u ocultar la contraseña
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Login.LoginUser(System.String,System.String)">
+            <summary>
+            Método para logear al usuario con los datos introducidos
+            <list type="number">
+            <item><param name="email">Email con el que se logea</param></item>
+            <item><param name="password">Contraseña introducida por el usuario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Login.CheckUser(System.String)">
+            <summary>
+            Método que redirige al usuario a la página principal comprobando su rol
+            <list type="number">
+            <item><param name="userId">Id del usuario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.#ctor">
+            <summary>
+            Página donde se puede ver tus datos como usuario y libros favoritos
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.InitializeAsync">
+            <summary>
+            Inicializa los datos de la página
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.LoadUserDataAsync">
+            <summary>
+            Carga los datos de la página
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.LoadUserInfo">
+            <summary>
+            Carga los datos del usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.LoadFavoriteBooks">
+            <summary>
+            Carga los datos de los libros favoritos del usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.LoadCategoryForBook(AppProyectoFinal.Data.ModelPdf)">
+            <summary>
+            Carga la información de categoría del libro dado
+            <list type="number">
+            <item><param name="book">Objeto de ModelPdf con la info del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.LoadPdfImage(AppProyectoFinal.Data.ModelPdf)">
+            <summary>
+            Carga la imagen del libro dado
+            <list type="number">
+            <item><param name="book">Objeto de ModelPdf con la info del libro</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.OnVerifyAccountClicked(System.Object,System.EventArgs)">
+            <summary>
+            Al clickar en el rol de la cuenta permite en algunos casos pedir la verificación del email
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.ShowEmailVerificationDialog">
+            <summary>
+            Muestra un dialogo de confirmación antes de hacer la petición
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.SendEmailVerification">
+            <summary>
+            Envía la petición de verificar email
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.FormatTimestamp(System.Int64)">
+            <summary>
+            Formatea la fecha de creación
+            <list type="number">
+            <item><param name="timestamp">fecha</param></item>
+            </list>
+            </summary>
+            <returns>Devuelve la fecha formateada</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.OnBookSelected(System.Object,Microsoft.Maui.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Al clickar a un libro se va a su página de detalle
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.goAjustes_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Va a la modificación de perfil
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.gotoAyudaClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de Ayuda.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.gotoMainClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método que te lleva a la página de inicio.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Profile.OnLogoutClicked(System.Object,System.EventArgs)">
+            <summary>
+            Deslogea al usuario si lo esta y navega a la página de inicio.
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.#ctor">
+            <summary>
+            Página donde se pueden modificar tus datos como usuario y configuraciones
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.OnBackButtonPressed">
+            <summary>
+            Al salir si no ha guardado los datos mantiene los iniciales
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.LoadUserInfo">
+            <summary>
+            Carga los datos del usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.LoadUserConfig">
+            <summary>
+            Carga la configuracion en uso del usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.PickImage">
+            <summary>
+            Selecciona una imagen del equipo del usuario 
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.doCambios_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Aplica los cambios realizados
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.UpdateProfile(System.String,System.String)">
+            <summary>
+            Actualiza el perfil con los datos del usuario
+            <list type="number">
+            <item><param name="name">Nuevo nombre del perfil</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.UploadImage(System.String)">
+            <summary>
+            Sube la imagen a firestore y luego actualiza el perfil
+            <list type="number">
+            <item><param name="name">Nuevo nombre del perfil</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.doCancelar_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Vuelve al perfil sin hacer modificaciones
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.FontPicker_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Actualiza el tamaño de fuente con el nuevo valor seleccionado
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.ThemePicker_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Actualiza el tema con el nuevo valor seleccionado
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.ProfileEdit.LanguagePicker_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Actualiza el idioma con el nuevo valor seleccionado
+            <list type="number">
+            <item><param name="sender">Origen del evento</param></item>
+            <item><param name="e">Argumentos de selección</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Register.#ctor">
+            <summary>
+            Página donde se puede registrar un nuevo usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Register.OnEyeButtonClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para ver u ocultar la contraseña
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Register.OnEyeButtonClicked2(System.Object,System.EventArgs)">
+            <summary>
+            Método para ver u ocultar la contraseña confirmada
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Register.doRegistro_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para iniciar el registro de un nuevo usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Register.ValidateData">
+            <summary>
+            Método que comprueba la validez de los datos introducidos para el nuevo usuario
+            </summary>
+            <returns>Tarea asíncrona que devuelve un booleano con el resultado de la comprobación de datos</returns>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Register.CreateUserAccount">
+            <summary>
+            Método que crea el nuevo usuario registrado.
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.Register.UpdateUserInfo(Firebase.Auth.User)">
+            <summary>
+            Método que sube la información del nuevo usuario a la BBDD.
+            <list type="number">
+            <item><param name="user">Objeto de la clase User con la información del usuario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.UserModal.#ctor(AppProyectoFinal.Data.ModelUser)">
+            <summary>
+            Modal donde se muestran las opciones a realizar sobre un usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.UserModal.OnAcceptClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para guardar la opción seleccionada y cerrar el modal
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.UserModal.OnDenyClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para guardar la opción seleccionada y cerrar el modal
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.UserModal.OnCancelClicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para guardar la opción seleccionada y cerrar el modal
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.Vistas.UserModal.CloseModal">
+            <summary>
+            Método para cerrar el modal
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.MainPage.#ctor">
+            <summary>
+            Página de inicio de la aplicación
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.MainPage.goLogin_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para ir al Login
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.MainPage.goInicio_Clicked(System.Object,System.EventArgs)">
+            <summary>
+            Método para ir a la página principal de la aplicación
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.MainPage.checkLog">
+            <summary>
+            Método que comprueba si se había logeado el usuario y si es asi redirige al usuario
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.MainPage.CheckUser(System.String)">
+            <summary>
+            Método que redirige al usuario a la página principal comprobando su rol
+            <list type="number">
+            <item><param name="userId">Id del usuario</param></item>
+            </list>
+            </summary>
+        </member>
+        <member name="T:AppProyectoFinal.AppProyectoFinal_XamlTypeInfo.XamlMetaDataProvider">
+            <summary>
+            Main class for providing metadata for the app or library
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.AppProyectoFinal_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.Type)">
+            <summary>
+            GetXamlType(Type)
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.AppProyectoFinal_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.String)">
+            <summary>
+            GetXamlType(String)
+            </summary>
+        </member>
+        <member name="M:AppProyectoFinal.AppProyectoFinal_XamlTypeInfo.XamlMetaDataProvider.GetXmlnsDefinitions">
+            <summary>
+            GetXmlnsDefinitions()
+            </summary>
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Release.Major">
+            The major version of the Windows App SDK release.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Release.Minor">
+            The minor version of the Windows App SDK release.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Release.Patch">
+            The patch version of the Windows App SDK release.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Release.MajorMinor">
+            The major and minor version of the Windows App SDK release, encoded as a uint32_t (0xMMMMNNNN where M=major, N=minor).
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Release.Channel">
+            The Windows App SDK release's channel; for example, "preview", or empty string for stable.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Release.VersionTag">
+            The Windows App SDK release's version tag; for example, "preview2", or empty string for stable.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Release.VersionShortTag">
+            The Windows App SDK release's short-form version tag; for example, "p2", or empty string for stable.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Release.FormattedVersionTag">
+            The Windows App SDK release's version tag, formatted for concatenation when constructing identifiers; for example, "-preview2", or empty string for stable.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Release.FormattedVersionShortTag">
+            The Windows App SDK release's short-form version tag, formatted for concatenation when constructing identifiers; for example, "-p2", or empty string for stable.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Identity.Publisher">
+            The Windows App SDK runtime's package identity's Publisher.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Identity.PublisherId">
+            The Windows App SDK runtime's package identity's PublisherId.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Version.Major">
+            The major version of the Windows App SDK runtime; for example, 1000.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Version.Minor">
+            The minor version of the Windows App SDK runtime; for example, 446.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Version.Build">
+            The build version of the Windows App SDK runtime; for example, 804.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Version.Revision">
+            The revision version of the Windows App SDK runtime; for example, 0.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Version.UInt64">
+            The version of the Windows App SDK runtime, as a uint64l for example, 0x03E801BE03240000.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Version.DotQuadString">
+            The version of the Windows App SDK runtime, as a string (const wchar_t*); for example, "1000.446.804.0".
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Packages.Framework.PackageFamilyName">
+            The Windows App SDK runtime's Framework package's family name.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Packages.Main.PackageFamilyName">
+            The Windows App SDK runtime's Main package's family name.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Packages.Singleton.PackageFamilyName">
+            The Windows App SDK runtime's Singleton package's family name.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Packages.DDLM.X86.PackageFamilyName">
+            The Windows App SDK runtime's Dynamic Dependency Lifetime Manager (DDLM) package's family name, for x86.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Packages.DDLM.X64.PackageFamilyName">
+            The Windows App SDK runtime's Dynamic Dependency Lifetime Manager (DDLM) package's family name, for x64.
+        </member>
+        <member name="F:Microsoft.WindowsAppSDK.Runtime.Packages.DDLM.Arm64.PackageFamilyName">
+            The Windows App SDK runtime's Dynamic Dependency Lifetime Manager (DDLM) package's family name, for arm64.
+        </member>
+        <member name="T:WinRT.RcwFallbackInitializer">
+            <summary>
+            Roots RCW types for assemblies referencing old projections.
+            It is recommended to update those, to get binary size savings.
+            </summary>
+        </member>
+        <member name="M:WinRT.RcwFallbackInitializer.InitializeRcwFallback">
+            <summary>
+            Roots all dependent RCW types.
+            </summary>
+        </member>
+    </members>
+</doc>

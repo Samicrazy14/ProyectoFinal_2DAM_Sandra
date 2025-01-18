@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "22204748927",
+    "firebase_url": "https://appproyectofinalsandra-9e477-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "appproyectofinalsandra-9e477",
+    "storage_bucket": "appproyectofinalsandra-9e477.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22204748927:android:fe787bd1dffc71bf50db4a",
+        "android_client_info": {
+          "package_name": "com.example.appproyectofinal_sandra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7tD6sGIW0F9_MMwXn_jhRAmafz6goqTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProyectoFinal.TemaOscuro">
+
+    <Color x:Key="BackgroundColor">#FFFFFF</Color>
+    <Color x:Key="GeneralColor">#222223</Color>
+    <Color x:Key="PrimaryColor">#DF1995</Color>
+    <Color x:Key="SubPrimaryColor">#99DF1995</Color>
+    <Color x:Key="SecondaryColor">#D3D5DB</Color>
+    <Color x:Key="SubSecondaryColor">#313133</Color>
+    <Color x:Key="BlackColor">#222223</Color>
+</ResourceDictionary>

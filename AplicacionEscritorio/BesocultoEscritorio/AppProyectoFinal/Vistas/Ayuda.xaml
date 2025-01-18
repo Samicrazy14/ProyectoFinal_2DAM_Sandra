@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:AppProyectoFinal.Data"
+             xmlns:local="clr-namespace:AppProyectoFinal.Data"
+             xmlns:lang="clr-namespace:AppProyectoFinal.Resources.Languages"
+             x:Class="AppProyectoFinal.Vistas.Ayuda"
+             BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"
+                >
+
+    <ContentPage.Resources>
+
+        <!-- Estilos Botones -->
+        <Style x:Key="btPrincipal" TargetType="Button">
+            <Setter Property="MinimumWidthRequest" Value="250"/>
+            <Setter Property="MaximumWidthRequest" Value="250"/>
+            <Setter Property="BackgroundColor"  Value="#DF1995"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos Etiquetas -->
+        <Style x:Key="lbHelpTitle" TargetType="Label">
+            <Setter Property="Margin" Value="0,20,0,0"/>
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTitulo}"/>
+            <Setter Property="FontFamily" Value="AfterglowRegular"/>
+            <Setter Property="TextColor" Value="#DF1995"/>
+        </Style>
+
+        <Style x:Key="lbText" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+    </ContentPage.Resources>
+    
+    <ScrollView  Padding="200,10">
+        <StackLayout>
+            <VerticalStackLayout x:Name="userHelp">
+                <Label Text="{Binding LocalizationResourceManager[help1], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help2], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help3], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help4], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help5], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help6], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help7], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help8], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help9], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help10], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help11], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help12], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help13], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help14], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help15], Mode=OneWay}" 
+                      Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help16], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help17], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help18], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help19], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help20], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help21], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help22], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help23], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help24], Mode=OneWay} " 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help25], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help26], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help27], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help28], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help29], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+            </VerticalStackLayout>
+            
+            
+            <VerticalStackLayout x:Name="adminHelp">
+                <Label Text="{Binding LocalizationResourceManager[help1], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help2], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help3], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help4], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help5], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help6], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help7], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help8], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help30], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help31], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help32], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help33], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help34], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help35], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help36], Mode=OneWay}"
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help37], Mode=OneWay}"
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help38], Mode=OneWay}"
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help39], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help40], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help41], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help42], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help43], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help44], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help45], Mode=OneWay}" 
+                         Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help46], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help23], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help24], Mode=OneWay} " 
+                       Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help47], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help48], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help49], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help50], Mode=OneWay}" 
+                        Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help51], Mode=OneWay}" 
+                        Style="{StaticResource lbText}" />
+                <Label Text="{Binding LocalizationResourceManager[help28], Mode=OneWay}" 
+                       Style="{StaticResource lbHelpTitle}" />
+                <Label Text="{Binding LocalizationResourceManager[help29], Mode=OneWay}" 
+                       Style="{StaticResource lbText}" />
+            </VerticalStackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

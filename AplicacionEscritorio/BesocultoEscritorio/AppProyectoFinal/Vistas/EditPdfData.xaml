@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProyectoFinal.Vistas.EditPdfData"
+             xmlns:local="clr-namespace:AppProyectoFinal.Data"
+             xmlns:lang="clr-namespace:AppProyectoFinal.Resources.Languages"
+             BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"
+             x:Name="mainPage">
+
+    <ContentPage.Resources>
+        <!-- Estilos Botones -->
+        <Style x:Key="btPrincipal" TargetType="Button">
+            <Setter Property="MinimumWidthRequest" Value="250"/>
+            <Setter Property="MaximumWidthRequest" Value="250"/>
+            <Setter Property="BackgroundColor"  Value="#DF1995"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos Etiquetas -->
+        <Style x:Key="lbTitle" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTitulo}"/>
+            <Setter Property="FontFamily" Value="AfterglowRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <Style x:Key="lbSubtitle" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftBold"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <Style x:Key="lbText" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+        </Style>
+
+        <!-- Estilos Entradas -->
+        <Style x:Key="entrada" TargetType="Entry">
+            <Setter Property="PlaceholderColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+            <Setter Property="BackgroundColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos Selector -->
+        <Style x:Key="selector" TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+        
+    </ContentPage.Resources>
+
+    <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <!-- Top Header with Back Button and Icon -->
+        <StackLayout Padding="20,50" HorizontalOptions="FillAndExpand">
+
+            <ImageButton Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=ClipIcon}" 
+                         x:Name="attachDocument"
+                         HorizontalOptions="End"
+                         VerticalOptions="Start"
+                         Clicked="OnAttachPdfClicked"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         BackgroundColor="Transparent"/>
+
+            <Image Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=LogoIcon}" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center"
+                   HeightRequest="200" 
+                   WidthRequest="200"/>
+
+            <Label Text="{Binding LocalizationResourceManager[btAddNewBook], Mode=OneWay}"
+                   x:Name="titlePage"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   Style="{StaticResource lbTitle}" />
+
+            <Label Text="{Binding LocalizationResourceManager[txtAddNewBook], Mode=OneWay}"
+                   Margin="0,10,0,0"
+                   WidthRequest="500"
+                   x:Name="textPage"
+                   HorizontalOptions="Center"
+                   VerticalOptions="End"
+                   Style="{StaticResource lbSubtitle}"/>    
+        </StackLayout>
+
+        <!-- Form fields -->
+        <Frame CornerRadius="20" Padding="50,20" Margin="0,-20,0,0"
+               BorderColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"
+               BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}">
+            <VerticalStackLayout Spacing="15" HorizontalOptions="Center" >
+                <HorizontalStackLayout>
+                    <Image Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=PdfIcon}"
+                           WidthRequest="24" 
+                           HeightRequest="24" 
+                           Margin="0,0,10,0"/>
+                    <Entry x:Name="TitleEntry" 
+                           Placeholder="{Binding LocalizationResourceManager[phTitulo], Mode=OneWay}" 
+                           Style="{StaticResource entrada}"
+                           WidthRequest="250" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Image Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=PdfIcon}"
+                           WidthRequest="24" 
+                           HeightRequest="24" 
+                           Margin="0,0,10,0"/>
+                    <Entry x:Name="DescriptionEntry" 
+                           Placeholder="{Binding LocalizationResourceManager[phDescripcion], Mode=OneWay}" 
+                           Style="{StaticResource entrada}"
+                           WidthRequest="250" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Image Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=CategoryIcon}" 
+                           WidthRequest="24" 
+                           HeightRequest="24" 
+                           Margin="0,0,10,0"/>
+                    <Picker Title="{Binding LocalizationResourceManager[txtCategoryBook], Mode=OneWay}" 
+                            TitleColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"
+                            ItemsSource="{Binding AllCategories}"
+                            ItemDisplayBinding="{Binding Category}"
+                            SelectedItem="{Binding SelectedCategory}"
+                            Style="{StaticResource selector}"
+                            WidthRequest="250"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Submit Button -->
+        <Button Text="{Binding LocalizationResourceManager[btSubir], Mode=OneWay}"
+                x:Name="updateButton"
+                Style="{StaticResource btPrincipal}"
+                HorizontalOptions="Center"
+                Clicked="OnUploadBookClicked"
+                WidthRequest="200"
+                Margin="0,20,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>

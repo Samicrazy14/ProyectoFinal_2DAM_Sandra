@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProyectoFinal.Vistas.DashBoardUsers"
+             xmlns:data="clr-namespace:AppProyectoFinal.Data"
+             xmlns:local="clr-namespace:AppProyectoFinal.Data"
+             xmlns:lang="clr-namespace:AppProyectoFinal.Resources.Languages"
+             x:Name="mainPage"
+             BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}">
+    
+    <ContentPage.Resources>
+        
+        <data:DefaultValueConverter x:Key="DefaultValueConverter"/>
+
+        <!-- Estilos Botones -->
+        <Style x:Key="btMenuPrincipal" TargetType="Button">
+            <Setter Property="BackgroundColor"  Value="#DF1995"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <Style x:Key="btSubMenu" TargetType="Button">
+            <Setter Property="BackgroundColor"  Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"/>
+            <Setter Property="TextColor"  Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos SearchBar -->
+        <Style x:Key="searchbar" TargetType="SearchBar">
+            <Setter Property="PlaceholderColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+            <Setter Property="BackgroundColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+        
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <FlexLayout Grid.Row="0" Grid.ColumnSpan="2" JustifyContent="SpaceBetween" VerticalOptions="Center" BackgroundColor="{DynamicResource PrimaryColor}">
+            <HorizontalStackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                <Label Text="{Binding LocalizationResourceManager[txtUsuarios], Mode=OneWay}"
+                       Padding="20,10,0,10"
+                       TextColor="White"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       FontFamily="TommySoftRegular"
+                       FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}" />
+                <BoxView WidthRequest="2" BackgroundColor="White" Margin="20,10"/>
+                <Button Text="{Binding LocalizationResourceManager[txtAyuda], Mode=OneWay}"
+                        Padding="0"
+                        Style="{StaticResource btMenuPrincipal}"
+                        Clicked="gotoAyudaClicked"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="End"  VerticalOptions="Center">
+                <HorizontalStackLayout VerticalOptions="Center">
+                    <HorizontalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnProfileClicked" />
+                    </HorizontalStackLayout.GestureRecognizers>
+                    <Label x:Name="userLabel" VerticalTextAlignment="Center" Margin="10,0"
+                           TextColor="White"
+                           FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}" 
+                           FontFamily="TommySoftRegular"
+                           Text="*********@gmail.com"></Label>
+                    <ImageButton Source="ic_person_notnight.png"
+                                 HeightRequest="20"
+                                 WidthRequest="20"
+                                 BackgroundColor="White"
+                                 Clicked="OnProfileClicked"
+                                 CornerRadius="50"
+                                 Margin="10"/>
+                </HorizontalStackLayout>
+                <ImageButton Source="ic_logout.png"
+                             HeightRequest="20"
+                             WidthRequest="20"
+                             BackgroundColor="Transparent"
+                             Clicked="OnLogoutClicked"
+                             Margin="10"/>
+            </HorizontalStackLayout>
+        </FlexLayout>
+
+        <!-- Left Sidebar  -->
+        <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}" Padding="10"
+             WidthRequest="270" MaximumWidthRequest="270" VerticalOptions="FillAndExpand">
+
+            <SearchBar x:Name="searchBarId" Placeholder="{Binding LocalizationResourceManager[searchName], Mode=OneWay}" TextChanged="OnTextChanged"
+                       CancelButtonColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"
+                       Style="{StaticResource searchbar}"/>
+
+            <Button x:Name="bookButton" 
+                    Text="{Binding LocalizationResourceManager[txtLibros], Mode=OneWay}" 
+                    Style="{StaticResource btSubMenu}"
+                    HorizontalOptions="Start"
+                    Clicked="gotoBookPageClicked"/>
+
+            <Button Text="{Binding LocalizationResourceManager[txtUsuarios], Mode=OneWay}" 
+                    Style="{StaticResource btSubMenu}"
+                    HorizontalOptions="Start"/>
+
+            <Button x:Name="categoryButton"
+                    Text="{Binding LocalizationResourceManager[txtCategorias], Mode=OneWay}" 
+                    Style="{StaticResource btSubMenu}"
+                    HorizontalOptions="Start"
+                    Clicked="gotoCategoryPageClicked"/>
+
+            <VerticalStackLayout VerticalOptions="EndAndExpand">
+                <Grid Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Label -->
+                    <Label Grid.Column="1"
+                           Text="{Binding LocalizationResourceManager[txtFilterpending], Mode=OneWay}"
+                           FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"
+                           FontFamily="TommySoftRegular"
+                           TextColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"
+                           VerticalOptions="Center" />
+
+                    <!-- Switch -->
+                    <Switch Grid.Column="0"
+                            WidthRequest="30"
+                            MaximumWidthRequest="30"
+                            IsToggled="{Binding isUserToggled}"
+                            VerticalOptions="Center"
+                            Toggled="OnSwitchUsersToggled"/>
+                </Grid>
+            </VerticalStackLayout>
+        </StackLayout>
+        <ScrollView x:Name="mainlayout" Margin="11" Grid.Row="1" Grid.Column="1">
+            <VerticalStackLayout HorizontalOptions="FillAndExpand">
+                <CollectionView x:Name="AllUsersCollection" ItemsSource="{Binding AllUsers}"
+                                HorizontalOptions="FillAndExpand">
+                    <CollectionView.Resources>
+                        <!-- Estilos Etiquetas -->
+                        <Style x:Key="lbText" TargetType="Label">
+                            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+                            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+                            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+                        </Style>
+
+                        <Style x:Key="lbBoldText" TargetType="Label">
+                            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+                            <Setter Property="FontFamily" Value="TommySoftBold"/>
+                            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+                        </Style>
+                    </CollectionView.Resources>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10"  VerticalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding LocalizationResourceManager[txtNoUsers], Mode=OneWay}"
+                                   Style="{StaticResource lbText}"
+                                   Margin="20,200"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="5" CornerRadius="10" 
+                                   BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"
+                                   BorderColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}">
+                                <Grid ColumnDefinitions="60, *, Auto, Auto">
+                                    <!-- Profile Picture -->
+                                    <Image Grid.Column="0"
+                                           Source="{Binding CoverImage}"
+                                           HeightRequest="50" WidthRequest="50"
+                                           Aspect="AspectFill"
+                                           Margin="0,0,10,0"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center" />
+
+                                    <!-- User Information -->
+                                    <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                        <Label Text="{Binding Name}" 
+                                               Style="{StaticResource lbBoldText}"/>
+                                        <Label Text="{Binding Email}" 
+                                               Style="{StaticResource lbText}" />
+                                        <Label Text="{Binding FormattedDate}" 
+                                               Style="{StaticResource lbText}" />
+                                        <Label Text="{Binding UserType}" 
+                                               Style="{StaticResource lbText}" />
+                                    </VerticalStackLayout>
+
+                                    <!-- Delete Button -->
+                                    <ImageButton Grid.Column="2"
+                                                 Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=DeleteIcon}"
+                                                 BackgroundColor="Transparent"
+                                                 WidthRequest="30"
+                                                 HeightRequest="30"
+                                                 Clicked="OnDeleteUserClicked"
+                                                 VerticalOptions="Center"
+                                                 HorizontalOptions="Center" />
+
+                                    <!-- Options Button -->
+                                    <ImageButton Grid.Column="3"
+                                                    Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=MoreIcon}"
+                                                    BackgroundColor="Transparent"
+                                                    WidthRequest="30"
+                                                    HeightRequest="30"
+                                                    Clicked="OnOptionsUserClicked"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center">
+                                        <ImageButton.Triggers>
+                                            <DataTrigger TargetType="ImageButton"
+                                                            Binding="{Binding UserType}"
+                                                            Value="pending user">
+                                                <Setter Property="IsVisible" Value="True" />
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="ImageButton"
+                                                            Binding="{Binding UserType}"
+                                                            Value="user">
+                                                <Setter Property="IsVisible" Value="False" />
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="ImageButton"
+                                                            Binding="{Binding UserType}"
+                                                            Value="admin">
+                                                <Setter Property="IsVisible" Value="False" />
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="ImageButton"
+                                                            Binding="{Binding UserType}"
+                                                            Value="author">
+                                                <Setter Property="IsVisible" Value="False" />
+                                            </DataTrigger>
+                                        </ImageButton.Triggers>
+                                    </ImageButton>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

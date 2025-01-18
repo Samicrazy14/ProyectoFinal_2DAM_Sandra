@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppProyectoFinal.Vistas.DashBoardBooks"
+             xmlns:data="clr-namespace:AppProyectoFinal.Data"
+             xmlns:local="clr-namespace:AppProyectoFinal.Data"
+             xmlns:lang="clr-namespace:AppProyectoFinal.Resources.Languages"
+             x:Name="mainPage"
+             BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}">
+
+    <ContentPage.Resources>
+        <data:DefaultValueConverter x:Key="DefaultValueConverter"/>
+
+        <!-- Estilos Botones -->
+        <Style x:Key="btMenuPrincipal" TargetType="Button">
+            <Setter Property="BackgroundColor"  Value="#DF1995"/>
+            <Setter Property="TextColor"  Value="White"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <Style x:Key="btSubMenu" TargetType="Button">
+            <Setter Property="BackgroundColor"  Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"/>
+            <Setter Property="TextColor"  Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+        <!-- Estilos SearchBar -->
+        <Style x:Key="searchbar" TargetType="SearchBar">
+            <Setter Property="PlaceholderColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+            <Setter Property="BackgroundColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"/>
+            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <FlexLayout Grid.Row="0" Grid.ColumnSpan="2" JustifyContent="SpaceBetween" VerticalOptions="Center" BackgroundColor="{DynamicResource PrimaryColor}">
+            <HorizontalStackLayout HorizontalOptions="Start" VerticalOptions="Center">
+                <Label Text="{Binding LocalizationResourceManager[txtLibros], Mode=OneWay}"
+                       Padding="20,10,0,10"
+                       TextColor="White"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       FontFamily="TommySoftRegular"
+                       FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}" />
+                <BoxView WidthRequest="2" BackgroundColor="White" Margin="20,10"/>
+                <Button Text="{Binding LocalizationResourceManager[txtAyuda], Mode=OneWay}"
+                        Padding="0"
+                        Style="{StaticResource btMenuPrincipal}" 
+                        Clicked="gotoAyudaClicked"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="End"  VerticalOptions="Center">
+                <HorizontalStackLayout VerticalOptions="Center">
+                    <HorizontalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnProfileClicked" />
+                    </HorizontalStackLayout.GestureRecognizers>
+                    <Label x:Name="userLabel" VerticalTextAlignment="Center" Margin="10,0"
+                           TextColor="White"
+                           FontFamily="TommySoftRegular"
+                           FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}" 
+                           Text="*********@gmail.com"></Label>
+                    <ImageButton Source="ic_person_notnight.png"
+                                 HeightRequest="20"
+                                 WidthRequest="20"
+                                 BackgroundColor="White"
+                                 Clicked="OnProfileClicked"
+                                 CornerRadius="50"
+                                 Margin="10"/>
+                </HorizontalStackLayout>
+                <ImageButton Source="ic_logout.png"
+                             HeightRequest="20"
+                             WidthRequest="20"
+                             BackgroundColor="Transparent"
+                             Clicked="OnLogoutClicked"
+                             Margin="10"/>
+            </HorizontalStackLayout>
+        </FlexLayout>
+
+        <!-- Left Sidebar -->
+        <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}" Padding="10"
+                     WidthRequest="270" MaximumWidthRequest="270" VerticalOptions="FillAndExpand">
+            
+            <SearchBar x:Name="searchBarId" Placeholder="{Binding LocalizationResourceManager[searchTitle], Mode=OneWay}" TextChanged="OnTextChanged"
+                       CancelButtonColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"
+                       Style="{StaticResource searchbar}"/>
+            
+            <Button Text="{Binding LocalizationResourceManager[txtLibros], Mode=OneWay}" 
+                    Style="{StaticResource btSubMenu}"
+                    HorizontalOptions="Start"/>
+
+            <Button x:Name="userButton"
+                    Text="{Binding LocalizationResourceManager[txtUsuarios], Mode=OneWay}" 
+                    Style="{StaticResource btSubMenu}"
+                    HorizontalOptions="Start"
+                    Clicked="gotoUsersPageClicked"/>
+
+            <Button x:Name="categoryButton"
+                    Text="{Binding LocalizationResourceManager[txtCategorias], Mode=OneWay}" 
+                    Style="{StaticResource btSubMenu}"
+                    HorizontalOptions="Start"
+                    Clicked="gotoCategoryPageClicked"/>
+            <VerticalStackLayout VerticalOptions="EndAndExpand">
+                <Grid Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Label -->
+                    <Label Grid.Column="1"
+                           Text="{Binding LocalizationResourceManager[txtFilterpending], Mode=OneWay}"
+                           FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"
+                           FontFamily="TommySoftRegular"
+                           TextColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"
+                           VerticalOptions="Center" />
+
+                    <!-- Switch -->
+                    <Switch Grid.Column="0"
+                            WidthRequest="30"
+                            MaximumWidthRequest="30"
+                            IsToggled="{Binding isBookToggled}"
+                            VerticalOptions="Center"
+                            Toggled="OnSwitchBooksToggled"/>
+                </Grid>
+
+                <Frame CornerRadius="10"  Padding="0" Margin="0"
+                       Grid.Column="1"
+                       HeightRequest="60"
+                       MaximumHeightRequest="60"
+                       BorderColor="#DF1995"
+                       BackgroundColor="#DF1995">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAddBookClicked" />
+                    </Frame.GestureRecognizers>
+                    <HorizontalStackLayout Padding="15,0">
+                        <ImageButton Source="ic_pdf.png"
+                                     BackgroundColor="#DF1995"
+                                     Margin="0,0,0,0"
+                                     WidthRequest="30"
+                                     HeightRequest="30"
+                                     Padding="0"
+                                     Clicked="OnAddBookClicked"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center" />
+                        <Label Margin="10,0"
+                               TextColor="White"
+                               FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"
+                               FontFamily="TommySoftRegular"
+                               Text="{Binding LocalizationResourceManager[txtUploadBook], Mode=OneWay}" 
+                               VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </StackLayout>
+        <ScrollView x:Name="mainlayout" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Margin="11">
+            <VerticalStackLayout HorizontalOptions="FillAndExpand">
+                <CollectionView x:Name="AllBooksCollection" ItemsSource="{Binding AllBooks}"
+                                HorizontalOptions="FillAndExpand"
+                                SelectionChanged="OnBookSelected"
+                                SelectionMode="Single">
+                    <CollectionView.Resources>
+                        <!-- Estilos Etiquetas -->
+                        <Style x:Key="lbText" TargetType="Label">
+                            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+                            <Setter Property="FontFamily" Value="TommySoftRegular"/>
+                            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+                        </Style>
+
+                        <Style x:Key="lbBoldText" TargetType="Label">
+                            <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                            <Setter Property="FontSize" Value="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"/>
+                            <Setter Property="FontFamily" Value="TommySoftBold"/>
+                            <Setter Property="TextColor" Value="{Binding Source={x:Static local:ThemeManager.Instance}, Path=TextPage}"/>
+                        </Style>
+                    </CollectionView.Resources>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" 
+                                         HorizontalItemSpacing="10"  
+                                         VerticalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.EmptyView>
+                        <VerticalStackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding LocalizationResourceManager[txtNoLibros], Mode=OneWay}"
+                                   Style="{StaticResource lbText}"
+                                   Margin="20,200"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="15" 
+                                   CornerRadius="10"
+                                   BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=BackgroundPage}"
+                                   BorderColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"
+                                   ToolTipProperties.Text="{Binding description, Converter={StaticResource DefaultValueConverter}, ConverterParameter='txtNoDescripcion'}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!-- Columna de la imagen -->
+                                    <Frame HeightRequest="120" WidthRequest="90" 
+                                           Padding="0" IsClippedToBounds="True" 
+                                           BackgroundColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}"
+                                           CornerRadius="8"                          
+                                           BorderColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SecondaryColor}">
+                                        <Image Source="{Binding CoverImage, Converter={StaticResource DefaultValueConverter}, ConverterParameter='default_book_cover.png'}" 
+                                                Aspect="AspectFill"/>
+                                    </Frame>
+                                    <!-- Columna de información -->
+                                    <Grid Grid.Column="1" Padding="15,0,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <!-- Título -->
+                                        <FlexLayout Grid.Row="0" 
+                                                    JustifyContent="SpaceBetween" 
+                                                    Wrap="NoWrap" 
+                                                    AlignItems="Center">
+                                            <Label Text="{Binding title, Converter={StaticResource DefaultValueConverter}, ConverterParameter='txtNoTitulo'}"
+                                                   Style="{StaticResource lbBoldText}"/>
+
+                                            <ImageButton Grid.Column="3"
+                                                            Source="{Binding Source={x:Static local:ThemeManager.Instance}, Path=MoreIcon}"
+                                                            BackgroundColor="Transparent"
+                                                            WidthRequest="30"
+                                                            HeightRequest="30"
+                                                            VerticalOptions="Center"
+                                                            HorizontalOptions="Center"
+                                                            Clicked="OnShowOptionsBookClicked"
+                                                            x:Name="moreButton">
+                                                <FlyoutBase.ContextFlyout>
+                                                    <MenuFlyout x:Name="menuFlyout">
+                                                        <MenuFlyoutItem Text="{Binding  Source={x:Reference mainPage}, Path=LocalizationResourceManager[txtEditar], Mode=OneWay}"
+                                                                        Clicked="OnOptionsBookClicked"
+                                                                        CommandParameter="Editar" />
+                                                        <MenuFlyoutItem Text="{Binding  Source={x:Reference mainPage}, Path=LocalizationResourceManager[txtBorrar], Mode=OneWay}"
+                                                                        Clicked="OnOptionsBookClicked"
+                                                                        CommandParameter="Borrar" />
+                                                        <MenuFlyoutItem Text="{Binding  Source={x:Reference mainPage}, Path=LocalizationResourceManager[btSubir], Mode=OneWay}"
+                                                                        IsEnabled="{Binding Source={x:Reference mainPage}, Path=BindingContext.isBookToggled}"
+                                                                        Clicked="OnOptionsBookClicked"
+                                                                        CommandParameter="Subir">
+                                                        </MenuFlyoutItem>
+                                                    </MenuFlyout>
+                                                </FlyoutBase.ContextFlyout>
+                                            </ImageButton>
+                                        </FlexLayout>
+                                        <!-- Descripción -->
+                                        <Label Grid.Row="1" 
+                                               Text="{Binding description, Converter={StaticResource DefaultValueConverter}, ConverterParameter='txtNoDescripcion'}"
+                                               FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}" 
+                                               FontFamily="TommySoftRegular"
+                                               TextColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"
+                                               MaxLines="2" LineBreakMode="TailTruncation"
+                                               VerticalOptions="Start"/>
+                                        <!-- FlexLayout en la parte inferior -->
+                                        <FlexLayout Grid.Row="2" 
+                                                    JustifyContent="SpaceBetween" 
+                                                    Wrap="NoWrap" 
+                                                    AlignItems="Center">
+                                            <Label Text="{Binding pagecount, Converter={StaticResource DefaultValueConverter}, ConverterParameter='AddPag'}"
+                                                   FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}" 
+                                                   FontFamily="TommySoftRegular"
+                                                   MinimumWidthRequest="90"
+                                                   MaximumWidthRequest="90"
+                                                   TextColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+                                            <Label Text="{Binding FormattedDate, Converter={StaticResource DefaultValueConverter}, ConverterParameter='txtNoFecha'}"
+                                                   FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}" 
+                                                   MinimumWidthRequest="110"
+                                                   MaximumWidthRequest="110"
+                                                   FontFamily="TommySoftRegular"
+                                                   TextColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+                                            <Label Text="{Binding Category, Converter={StaticResource DefaultValueConverter}, ConverterParameter='txtNoCategoria'}"
+                                                   FontSize="{Binding Source={x:Static local:FontSizeManager.Instance}, Path=SizeTexto}"
+                                                   FontFamily="TommySoftRegular"
+                                                   MinimumWidthRequest="200"
+                                                   MaximumWidthRequest="200"
+                                                   HorizontalTextAlignment="End"
+                                                   TextColor="{Binding Source={x:Static local:ThemeManager.Instance}, Path=SubSecondaryColor}"/>
+                                        </FlexLayout>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

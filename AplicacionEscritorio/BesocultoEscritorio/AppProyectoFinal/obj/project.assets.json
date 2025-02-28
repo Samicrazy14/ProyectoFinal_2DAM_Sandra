@@ -87878,11 +87878,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\AppProyectoFinal.csproj",
+      "projectUniqueName": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\AppProyectoFinal.csproj",
       "projectName": "AppProyectoFinal",
-      "projectPath": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\AppProyectoFinal.csproj",
+      "projectPath": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\AppProyectoFinal.csproj",
       "packagesPath": "C:\\Users\\sandr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\obj\\",
+      "outputPath": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

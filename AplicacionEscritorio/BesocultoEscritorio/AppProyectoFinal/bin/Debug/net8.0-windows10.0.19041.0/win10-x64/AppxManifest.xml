@@ -7,7 +7,7 @@
 
     Para obtener más información acerca de los archivos de manifiesto del paquete, vea http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="com.companyname.appproyectofinal" Publisher="CN=User Name" Version="1.0.0.1" ProcessorArchitecture="x64" />
+  <Identity Name="com.companyname.appproyectofinal" Publisher="CN=Sandra_Garcia_Sepulveda" Version="1.0.0.0" ProcessorArchitecture="x64" />
   <mp:PhoneIdentity PhoneProductId="740D1F3C-C7F6-4014-A509-084836ED7F4E" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Besoculto</DisplayName>

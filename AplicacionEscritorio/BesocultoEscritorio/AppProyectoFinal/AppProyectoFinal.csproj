@@ -47,7 +47,7 @@
 		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
 		<GenerateTestArtifacts>True</GenerateTestArtifacts>
 		<AppInstallerUri>C:\Users\sandr\Desktop\PF\AplicacionEscritorio\AppProyectoFinal\AppProyectoFinal</AppInstallerUri>
-		<HoursBetweenUpdateChecks>2016</HoursBetweenUpdateChecks>
+		<HoursBetweenUpdateChecks>20160</HoursBetweenUpdateChecks>
 	</PropertyGroup>
 
 	<ItemGroup>

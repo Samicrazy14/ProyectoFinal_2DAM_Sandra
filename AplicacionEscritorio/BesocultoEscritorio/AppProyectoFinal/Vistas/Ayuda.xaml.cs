@@ -5,11 +5,14 @@ namespace AppProyectoFinal.Vistas;
 public partial class Ayuda : ContentPage
 {
     private FirebaseDatabaseManager firebaseDatabaseManager = new FirebaseDatabaseManager();
+    public LocalizationResourceManager LocalizationResourceManager
+        => LocalizationResourceManager.Instance;
+
     public Ayuda()
 	{
-		InitializeComponent();
-        BindingContext = this;
+        InitializeComponent();
         InitializeData();
+        BindingContext = this;
     }
 
     /// <summary>

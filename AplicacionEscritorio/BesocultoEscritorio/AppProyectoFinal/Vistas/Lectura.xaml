@@ -79,7 +79,8 @@
                       HeightRequest="700" />
         </VerticalStackLayout>
         <ScrollView x:Name="pdfLayout" Grid.Row="2" VerticalOptions="FillAndExpand">
-            <CollectionView ItemsSource="{Binding PageImages}"
+            <CollectionView x:Name="pdfCollectionView"
+                            ItemsSource="{Binding PageImages}"
                             VerticalOptions="FillAndExpand" 
                             HorizontalOptions="FillAndExpand">
                 <CollectionView.ItemsLayout>
@@ -93,7 +94,7 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame Padding="10" Margin="10" BackgroundColor="Transparent" BorderColor="Transparent">
-                            <Image Source="{Binding}"  HeightRequest="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ImageHeight}" />
+                            <Image Source="{Binding}" HeightRequest="{Binding Source={x:Reference mainPage}, Path=BindingContext.ImageHeight}"/>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

@@ -53,9 +53,27 @@ public partial class Lectura : ContentPage, INotifyPropertyChanged
             if (_imageHeight != value)
             {
                 _imageHeight = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(ImageHeight));
+
+                // Forzar actualización de la colección
+                RefreshCollectionView();
             }
         }
+    }
+
+    // Método agregado para forzar actualización de CollectionView
+    private void RefreshCollectionView()
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            // Esto activa la actualización de los elementos mostrados
+            var temp = new ObservableCollection<ImageSource>(PageImages);
+            PageImages.Clear();
+            foreach (var img in temp)
+            {
+                PageImages.Add(img);
+            }
+        });
     }
 
     /// <summary>

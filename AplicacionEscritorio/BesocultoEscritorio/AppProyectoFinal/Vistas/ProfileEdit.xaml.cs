@@ -15,6 +15,7 @@ public partial class ProfileEdit : ContentPage, INotifyPropertyChanged
 
     //Atributos
     private FileResult? selectedImage;
+    public ModelConfig CurrentConfig;
     private ModelUser _currentUser;
     public ModelUser CurrentUser
     {
@@ -81,7 +82,6 @@ public partial class ProfileEdit : ContentPage, INotifyPropertyChanged
         BindingContext = this;
 
         // Cargar datos cuando la página aparezca
-        LoadUserConfig();
         Appearing += async (s, e) => await LoadUserInfo();
 
         // Actualización dinamica del idioma en las opciones de los pickers
@@ -133,6 +133,8 @@ public partial class ProfileEdit : ContentPage, INotifyPropertyChanged
             {
                 ProfileImage.Source = ImageSource.FromUri(new Uri(CurrentUser.ProfileImage));
             }
+            CurrentConfig = await firebaseDatabaseManager.GetConfigUserAsync(CurrentUser.Uid);
+            LoadUserConfig();
         }
         catch (Exception ex)
         {
@@ -156,6 +158,10 @@ public partial class ProfileEdit : ContentPage, INotifyPropertyChanged
         FontPicker.SelectedIndex = initialSizeIndex;
         selectedSizeIndex = initialSizeIndex;
 
+        if (CurrentConfig.language == "es")
+            initialLanguageIndex = 0;
+        else
+            initialLanguageIndex = 1;
         LanguagePicker.SelectedIndex = initialLanguageIndex;
         selectedLanguageIndex = initialLanguageIndex;
 

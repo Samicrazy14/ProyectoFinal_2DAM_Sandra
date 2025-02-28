@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\",
+  "WorkspaceRootPath": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|c:\\users\\sandr\\desktop\\pf\\aplicacionescritorio\\appproyectofinal\\appproyectofinal\\documentation.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|solutionrelative:appproyectofinal\\documentation.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|d:\\escritorio\\2dam\\pf\\aplicacionescritorio\\appproyectofinal\\appproyectofinal\\vistas\\lectura.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|solutionrelative:appproyectofinal\\vistas\\lectura.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|c:\\users\\sandr\\desktop\\pf\\aplicacionescritorio\\appproyectofinal\\appproyectofinal\\appproyectofinal.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|solutionrelative:appproyectofinal\\appproyectofinal.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|d:\\escritorio\\2dam\\pf\\aplicacionescritorio\\appproyectofinal\\appproyectofinal\\vistas\\lectura.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|solutionrelative:appproyectofinal\\vistas\\lectura.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|c:\\users\\sandr\\desktop\\pf\\aplicacionescritorio\\appproyectofinal\\appproyectofinal\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|solutionrelative:appproyectofinal\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|d:\\escritorio\\2dam\\pf\\aplicacionescritorio\\appproyectofinal\\appproyectofinal\\vistas\\profileedit.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D313A7-3F92-444F-9BD6-87690E161D2D}|AppProyectoFinal\\AppProyectoFinal.csproj|solutionrelative:appproyectofinal\\vistas\\profileedit.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 365,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +38,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Documentation.xml",
-              "DocumentMoniker": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\Documentation.xml",
-              "RelativeDocumentMoniker": "AppProyectoFinal\\Documentation.xml",
-              "ToolTip": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\Documentation.xml",
-              "RelativeToolTip": "AppProyectoFinal\\Documentation.xml",
-              "ViewState": "AgIAANsMAAAAAAAAAAAEwPIMAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2025-01-18T18:43:46.135Z",
+              "DocumentIndex": 1,
+              "Title": "Lectura.xaml",
+              "DocumentMoniker": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\Vistas\\Lectura.xaml",
+              "RelativeDocumentMoniker": "AppProyectoFinal\\Vistas\\Lectura.xaml",
+              "ToolTip": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\Vistas\\Lectura.xaml",
+              "RelativeToolTip": "AppProyectoFinal\\Vistas\\Lectura.xaml",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAAAGAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-18T18:54:43.067Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppProyectoFinal",
-              "DocumentMoniker": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\AppProyectoFinal.csproj",
-              "RelativeDocumentMoniker": "AppProyectoFinal\\AppProyectoFinal.csproj",
-              "ToolTip": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\AppProyectoFinal.csproj",
-              "RelativeToolTip": "AppProyectoFinal\\AppProyectoFinal.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-18T18:37:22.247Z",
+              "DocumentIndex": 0,
+              "Title": "Lectura.xaml.cs",
+              "DocumentMoniker": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\Vistas\\Lectura.xaml.cs",
+              "RelativeDocumentMoniker": "AppProyectoFinal\\Vistas\\Lectura.xaml.cs",
+              "ToolTip": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\Vistas\\Lectura.xaml.cs",
+              "RelativeToolTip": "AppProyectoFinal\\Vistas\\Lectura.xaml.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAADwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T18:53:07.506Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\App.xaml.cs",
-              "RelativeDocumentMoniker": "AppProyectoFinal\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\sandr\\Desktop\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\App.xaml.cs",
-              "RelativeToolTip": "AppProyectoFinal\\App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABWAAAAAAAAAA==",
+              "Title": "ProfileEdit.xaml.cs",
+              "DocumentMoniker": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\Vistas\\ProfileEdit.xaml.cs",
+              "RelativeDocumentMoniker": "AppProyectoFinal\\Vistas\\ProfileEdit.xaml.cs",
+              "ToolTip": "D:\\Escritorio\\2DAM\\PF\\AplicacionEscritorio\\AppProyectoFinal\\AppProyectoFinal\\Vistas\\ProfileEdit.xaml.cs",
+              "RelativeToolTip": "AppProyectoFinal\\Vistas\\ProfileEdit.xaml.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAKMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T16:05:57.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T18:25:37.661Z"
             }
           ]
         }
